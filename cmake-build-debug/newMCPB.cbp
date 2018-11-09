@@ -82,6 +82,42 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/Node.cpp">
+			<Option target="newMCPB"/>
+		</Unit>
+		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/Node.h">
+			<Option target="newMCPB"/>
+		</Unit>
+		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/ProblemInstance.cpp">
+			<Option target="newMCPB"/>
+		</Unit>
+		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/ProblemInstance.h">
+			<Option target="newMCPB"/>
+		</Unit>
+		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/Reader.cpp">
+			<Option target="newMCPB"/>
+		</Unit>
+		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/Reader.h">
+			<Option target="newMCPB"/>
+		</Unit>
+		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/Route.cpp">
+			<Option target="newMCPB"/>
+		</Unit>
+		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/Route.h">
+			<Option target="newMCPB"/>
+		</Unit>
+		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/Trip.cpp">
+			<Option target="newMCPB"/>
+		</Unit>
+		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/Trip.h">
+			<Option target="newMCPB"/>
+		</Unit>
+		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/Truck.cpp">
+			<Option target="newMCPB"/>
+		</Unit>
+		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/Truck.h">
+			<Option target="newMCPB"/>
+		</Unit>
 		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/main.cpp">
 			<Option target="newMCPB"/>
 		</Unit>

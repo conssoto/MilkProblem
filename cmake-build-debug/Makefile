@@ -123,6 +123,168 @@ newMCPB/fast:
 	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/build
 .PHONY : newMCPB/fast
 
+Node.o: Node.cpp.o
+
+.PHONY : Node.o
+
+# target to build an object file
+Node.cpp.o:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Node.cpp.o
+.PHONY : Node.cpp.o
+
+Node.i: Node.cpp.i
+
+.PHONY : Node.i
+
+# target to preprocess a source file
+Node.cpp.i:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Node.cpp.i
+.PHONY : Node.cpp.i
+
+Node.s: Node.cpp.s
+
+.PHONY : Node.s
+
+# target to generate assembly for a file
+Node.cpp.s:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Node.cpp.s
+.PHONY : Node.cpp.s
+
+ProblemInstance.o: ProblemInstance.cpp.o
+
+.PHONY : ProblemInstance.o
+
+# target to build an object file
+ProblemInstance.cpp.o:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/ProblemInstance.cpp.o
+.PHONY : ProblemInstance.cpp.o
+
+ProblemInstance.i: ProblemInstance.cpp.i
+
+.PHONY : ProblemInstance.i
+
+# target to preprocess a source file
+ProblemInstance.cpp.i:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/ProblemInstance.cpp.i
+.PHONY : ProblemInstance.cpp.i
+
+ProblemInstance.s: ProblemInstance.cpp.s
+
+.PHONY : ProblemInstance.s
+
+# target to generate assembly for a file
+ProblemInstance.cpp.s:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/ProblemInstance.cpp.s
+.PHONY : ProblemInstance.cpp.s
+
+Reader.o: Reader.cpp.o
+
+.PHONY : Reader.o
+
+# target to build an object file
+Reader.cpp.o:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Reader.cpp.o
+.PHONY : Reader.cpp.o
+
+Reader.i: Reader.cpp.i
+
+.PHONY : Reader.i
+
+# target to preprocess a source file
+Reader.cpp.i:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Reader.cpp.i
+.PHONY : Reader.cpp.i
+
+Reader.s: Reader.cpp.s
+
+.PHONY : Reader.s
+
+# target to generate assembly for a file
+Reader.cpp.s:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Reader.cpp.s
+.PHONY : Reader.cpp.s
+
+Route.o: Route.cpp.o
+
+.PHONY : Route.o
+
+# target to build an object file
+Route.cpp.o:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Route.cpp.o
+.PHONY : Route.cpp.o
+
+Route.i: Route.cpp.i
+
+.PHONY : Route.i
+
+# target to preprocess a source file
+Route.cpp.i:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Route.cpp.i
+.PHONY : Route.cpp.i
+
+Route.s: Route.cpp.s
+
+.PHONY : Route.s
+
+# target to generate assembly for a file
+Route.cpp.s:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Route.cpp.s
+.PHONY : Route.cpp.s
+
+Trip.o: Trip.cpp.o
+
+.PHONY : Trip.o
+
+# target to build an object file
+Trip.cpp.o:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Trip.cpp.o
+.PHONY : Trip.cpp.o
+
+Trip.i: Trip.cpp.i
+
+.PHONY : Trip.i
+
+# target to preprocess a source file
+Trip.cpp.i:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Trip.cpp.i
+.PHONY : Trip.cpp.i
+
+Trip.s: Trip.cpp.s
+
+.PHONY : Trip.s
+
+# target to generate assembly for a file
+Trip.cpp.s:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Trip.cpp.s
+.PHONY : Trip.cpp.s
+
+Truck.o: Truck.cpp.o
+
+.PHONY : Truck.o
+
+# target to build an object file
+Truck.cpp.o:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Truck.cpp.o
+.PHONY : Truck.cpp.o
+
+Truck.i: Truck.cpp.i
+
+.PHONY : Truck.i
+
+# target to preprocess a source file
+Truck.cpp.i:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Truck.cpp.i
+.PHONY : Truck.cpp.i
+
+Truck.s: Truck.cpp.s
+
+.PHONY : Truck.s
+
+# target to generate assembly for a file
+Truck.cpp.s:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Truck.cpp.s
+.PHONY : Truck.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +321,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... newMCPB"
+	@echo "... Node.o"
+	@echo "... Node.i"
+	@echo "... Node.s"
+	@echo "... ProblemInstance.o"
+	@echo "... ProblemInstance.i"
+	@echo "... ProblemInstance.s"
+	@echo "... Reader.o"
+	@echo "... Reader.i"
+	@echo "... Reader.s"
+	@echo "... Route.o"
+	@echo "... Route.i"
+	@echo "... Route.s"
+	@echo "... Trip.o"
+	@echo "... Trip.i"
+	@echo "... Trip.s"
+	@echo "... Truck.o"
+	@echo "... Truck.i"
+	@echo "... Truck.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

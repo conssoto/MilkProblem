@@ -70,17 +70,107 @@ CMakeFiles/newMCPB.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/newMCPB.dir/main.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/constanzasoto/TT1-TT2/newMCPB/main.cpp -o CMakeFiles/newMCPB.dir/main.cpp.s
 
+CMakeFiles/newMCPB.dir/Node.cpp.o: CMakeFiles/newMCPB.dir/flags.make
+CMakeFiles/newMCPB.dir/Node.cpp.o: ../Node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/constanzasoto/TT1-TT2/newMCPB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/newMCPB.dir/Node.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/newMCPB.dir/Node.cpp.o -c /Users/constanzasoto/TT1-TT2/newMCPB/Node.cpp
+
+CMakeFiles/newMCPB.dir/Node.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/newMCPB.dir/Node.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/constanzasoto/TT1-TT2/newMCPB/Node.cpp > CMakeFiles/newMCPB.dir/Node.cpp.i
+
+CMakeFiles/newMCPB.dir/Node.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/newMCPB.dir/Node.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/constanzasoto/TT1-TT2/newMCPB/Node.cpp -o CMakeFiles/newMCPB.dir/Node.cpp.s
+
+CMakeFiles/newMCPB.dir/Trip.cpp.o: CMakeFiles/newMCPB.dir/flags.make
+CMakeFiles/newMCPB.dir/Trip.cpp.o: ../Trip.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/constanzasoto/TT1-TT2/newMCPB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/newMCPB.dir/Trip.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/newMCPB.dir/Trip.cpp.o -c /Users/constanzasoto/TT1-TT2/newMCPB/Trip.cpp
+
+CMakeFiles/newMCPB.dir/Trip.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/newMCPB.dir/Trip.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/constanzasoto/TT1-TT2/newMCPB/Trip.cpp > CMakeFiles/newMCPB.dir/Trip.cpp.i
+
+CMakeFiles/newMCPB.dir/Trip.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/newMCPB.dir/Trip.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/constanzasoto/TT1-TT2/newMCPB/Trip.cpp -o CMakeFiles/newMCPB.dir/Trip.cpp.s
+
+CMakeFiles/newMCPB.dir/Route.cpp.o: CMakeFiles/newMCPB.dir/flags.make
+CMakeFiles/newMCPB.dir/Route.cpp.o: ../Route.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/constanzasoto/TT1-TT2/newMCPB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/newMCPB.dir/Route.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/newMCPB.dir/Route.cpp.o -c /Users/constanzasoto/TT1-TT2/newMCPB/Route.cpp
+
+CMakeFiles/newMCPB.dir/Route.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/newMCPB.dir/Route.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/constanzasoto/TT1-TT2/newMCPB/Route.cpp > CMakeFiles/newMCPB.dir/Route.cpp.i
+
+CMakeFiles/newMCPB.dir/Route.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/newMCPB.dir/Route.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/constanzasoto/TT1-TT2/newMCPB/Route.cpp -o CMakeFiles/newMCPB.dir/Route.cpp.s
+
+CMakeFiles/newMCPB.dir/Truck.cpp.o: CMakeFiles/newMCPB.dir/flags.make
+CMakeFiles/newMCPB.dir/Truck.cpp.o: ../Truck.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/constanzasoto/TT1-TT2/newMCPB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/newMCPB.dir/Truck.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/newMCPB.dir/Truck.cpp.o -c /Users/constanzasoto/TT1-TT2/newMCPB/Truck.cpp
+
+CMakeFiles/newMCPB.dir/Truck.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/newMCPB.dir/Truck.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/constanzasoto/TT1-TT2/newMCPB/Truck.cpp > CMakeFiles/newMCPB.dir/Truck.cpp.i
+
+CMakeFiles/newMCPB.dir/Truck.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/newMCPB.dir/Truck.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/constanzasoto/TT1-TT2/newMCPB/Truck.cpp -o CMakeFiles/newMCPB.dir/Truck.cpp.s
+
+CMakeFiles/newMCPB.dir/ProblemInstance.cpp.o: CMakeFiles/newMCPB.dir/flags.make
+CMakeFiles/newMCPB.dir/ProblemInstance.cpp.o: ../ProblemInstance.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/constanzasoto/TT1-TT2/newMCPB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/newMCPB.dir/ProblemInstance.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/newMCPB.dir/ProblemInstance.cpp.o -c /Users/constanzasoto/TT1-TT2/newMCPB/ProblemInstance.cpp
+
+CMakeFiles/newMCPB.dir/ProblemInstance.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/newMCPB.dir/ProblemInstance.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/constanzasoto/TT1-TT2/newMCPB/ProblemInstance.cpp > CMakeFiles/newMCPB.dir/ProblemInstance.cpp.i
+
+CMakeFiles/newMCPB.dir/ProblemInstance.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/newMCPB.dir/ProblemInstance.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/constanzasoto/TT1-TT2/newMCPB/ProblemInstance.cpp -o CMakeFiles/newMCPB.dir/ProblemInstance.cpp.s
+
+CMakeFiles/newMCPB.dir/Reader.cpp.o: CMakeFiles/newMCPB.dir/flags.make
+CMakeFiles/newMCPB.dir/Reader.cpp.o: ../Reader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/constanzasoto/TT1-TT2/newMCPB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/newMCPB.dir/Reader.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/newMCPB.dir/Reader.cpp.o -c /Users/constanzasoto/TT1-TT2/newMCPB/Reader.cpp
+
+CMakeFiles/newMCPB.dir/Reader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/newMCPB.dir/Reader.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/constanzasoto/TT1-TT2/newMCPB/Reader.cpp > CMakeFiles/newMCPB.dir/Reader.cpp.i
+
+CMakeFiles/newMCPB.dir/Reader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/newMCPB.dir/Reader.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/constanzasoto/TT1-TT2/newMCPB/Reader.cpp -o CMakeFiles/newMCPB.dir/Reader.cpp.s
+
 # Object files for target newMCPB
 newMCPB_OBJECTS = \
-"CMakeFiles/newMCPB.dir/main.cpp.o"
+"CMakeFiles/newMCPB.dir/main.cpp.o" \
+"CMakeFiles/newMCPB.dir/Node.cpp.o" \
+"CMakeFiles/newMCPB.dir/Trip.cpp.o" \
+"CMakeFiles/newMCPB.dir/Route.cpp.o" \
+"CMakeFiles/newMCPB.dir/Truck.cpp.o" \
+"CMakeFiles/newMCPB.dir/ProblemInstance.cpp.o" \
+"CMakeFiles/newMCPB.dir/Reader.cpp.o"
 
 # External object files for target newMCPB
 newMCPB_EXTERNAL_OBJECTS =
 
 newMCPB: CMakeFiles/newMCPB.dir/main.cpp.o
+newMCPB: CMakeFiles/newMCPB.dir/Node.cpp.o
+newMCPB: CMakeFiles/newMCPB.dir/Trip.cpp.o
+newMCPB: CMakeFiles/newMCPB.dir/Route.cpp.o
+newMCPB: CMakeFiles/newMCPB.dir/Truck.cpp.o
+newMCPB: CMakeFiles/newMCPB.dir/ProblemInstance.cpp.o
+newMCPB: CMakeFiles/newMCPB.dir/Reader.cpp.o
 newMCPB: CMakeFiles/newMCPB.dir/build.make
 newMCPB: CMakeFiles/newMCPB.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/constanzasoto/TT1-TT2/newMCPB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable newMCPB"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/constanzasoto/TT1-TT2/newMCPB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable newMCPB"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/newMCPB.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
