@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/constanzasoto/TT1-TT2/newMCPB/Node.cpp" "/Users/constanzasoto/TT1-TT2/newMCPB/cmake-build-debug/CMakeFiles/newMCPB.dir/Node.cpp.o"
   "/Users/constanzasoto/TT1-TT2/newMCPB/Route.cpp" "/Users/constanzasoto/TT1-TT2/newMCPB/cmake-build-debug/CMakeFiles/newMCPB.dir/Route.cpp.o"
   "/Users/constanzasoto/TT1-TT2/newMCPB/Trip.cpp" "/Users/constanzasoto/TT1-TT2/newMCPB/cmake-build-debug/CMakeFiles/newMCPB.dir/Trip.cpp.o"
+  "/Users/constanzasoto/TT1-TT2/newMCPB/Truck.cpp" "/Users/constanzasoto/TT1-TT2/newMCPB/cmake-build-debug/CMakeFiles/newMCPB.dir/Truck.cpp.o"
   "/Users/constanzasoto/TT1-TT2/newMCPB/main.cpp" "/Users/constanzasoto/TT1-TT2/newMCPB/cmake-build-debug/CMakeFiles/newMCPB.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
