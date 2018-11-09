@@ -3,4 +3,4 @@ project(newMCPB)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(newMCPB main.cpp Node.cpp Node.h)
+add_executable(newMCPB main.cpp Node.cpp Node.h Trip.cpp Trip.h)

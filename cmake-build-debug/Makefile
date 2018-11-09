@@ -150,6 +150,33 @@ Node.cpp.s:
 	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Node.cpp.s
 .PHONY : Node.cpp.s
 
+Trip.o: Trip.cpp.o
+
+.PHONY : Trip.o
+
+# target to build an object file
+Trip.cpp.o:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Trip.cpp.o
+.PHONY : Trip.cpp.o
+
+Trip.i: Trip.cpp.i
+
+.PHONY : Trip.i
+
+# target to preprocess a source file
+Trip.cpp.i:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Trip.cpp.i
+.PHONY : Trip.cpp.i
+
+Trip.s: Trip.cpp.s
+
+.PHONY : Trip.s
+
+# target to generate assembly for a file
+Trip.cpp.s:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Trip.cpp.s
+.PHONY : Trip.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -189,6 +216,9 @@ help:
 	@echo "... Node.o"
 	@echo "... Node.i"
 	@echo "... Node.s"
+	@echo "... Trip.o"
+	@echo "... Trip.i"
+	@echo "... Trip.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
