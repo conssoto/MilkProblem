@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/Node.cpp">
+			<Option target="newMCPB"/>
+		</Unit>
+		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/Node.h">
+			<Option target="newMCPB"/>
+		</Unit>
 		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/main.cpp">
 			<Option target="newMCPB"/>
 		</Unit>
