@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/newMCPB.dir/main.cpp.o"
   "CMakeFiles/newMCPB.dir/Node.cpp.o"
   "CMakeFiles/newMCPB.dir/Trip.cpp.o"
+  "CMakeFiles/newMCPB.dir/Route.cpp.o"
   "newMCPB.pdb"
   "newMCPB"
 )
