@@ -177,6 +177,33 @@ ProblemInstance.cpp.s:
 	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/ProblemInstance.cpp.s
 .PHONY : ProblemInstance.cpp.s
 
+Reader.o: Reader.cpp.o
+
+.PHONY : Reader.o
+
+# target to build an object file
+Reader.cpp.o:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Reader.cpp.o
+.PHONY : Reader.cpp.o
+
+Reader.i: Reader.cpp.i
+
+.PHONY : Reader.i
+
+# target to preprocess a source file
+Reader.cpp.i:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Reader.cpp.i
+.PHONY : Reader.cpp.i
+
+Reader.s: Reader.cpp.s
+
+.PHONY : Reader.s
+
+# target to generate assembly for a file
+Reader.cpp.s:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Reader.cpp.s
+.PHONY : Reader.cpp.s
+
 Route.o: Route.cpp.o
 
 .PHONY : Route.o
@@ -300,6 +327,9 @@ help:
 	@echo "... ProblemInstance.o"
 	@echo "... ProblemInstance.i"
 	@echo "... ProblemInstance.s"
+	@echo "... Reader.o"
+	@echo "... Reader.i"
+	@echo "... Reader.s"
 	@echo "... Route.o"
 	@echo "... Route.i"
 	@echo "... Route.s"
