@@ -4,7 +4,6 @@
 #include "Node.h"
 #include "Truck.h"
 #include "Route.h"
-#include "Quality.h"
 
 using namespace std;
 

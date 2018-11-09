@@ -37,8 +37,6 @@ ProblemInstance *Reader::readInputFile(){
     this->findDef(":=");
     this->readDistances(problemInstance);
 
-//    problemInstance->printAll();
-
     return problemInstance;
 }
 
