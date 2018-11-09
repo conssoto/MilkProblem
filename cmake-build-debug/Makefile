@@ -150,6 +150,33 @@ Node.cpp.s:
 	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Node.cpp.s
 .PHONY : Node.cpp.s
 
+ProblemInstance.o: ProblemInstance.cpp.o
+
+.PHONY : ProblemInstance.o
+
+# target to build an object file
+ProblemInstance.cpp.o:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/ProblemInstance.cpp.o
+.PHONY : ProblemInstance.cpp.o
+
+ProblemInstance.i: ProblemInstance.cpp.i
+
+.PHONY : ProblemInstance.i
+
+# target to preprocess a source file
+ProblemInstance.cpp.i:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/ProblemInstance.cpp.i
+.PHONY : ProblemInstance.cpp.i
+
+ProblemInstance.s: ProblemInstance.cpp.s
+
+.PHONY : ProblemInstance.s
+
+# target to generate assembly for a file
+ProblemInstance.cpp.s:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/ProblemInstance.cpp.s
+.PHONY : ProblemInstance.cpp.s
+
 Route.o: Route.cpp.o
 
 .PHONY : Route.o
@@ -270,6 +297,9 @@ help:
 	@echo "... Node.o"
 	@echo "... Node.i"
 	@echo "... Node.s"
+	@echo "... ProblemInstance.o"
+	@echo "... ProblemInstance.i"
+	@echo "... ProblemInstance.s"
 	@echo "... Route.o"
 	@echo "... Route.i"
 	@echo "... Route.s"

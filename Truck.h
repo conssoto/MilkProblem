@@ -21,4 +21,3 @@ public:
     bool operator>(const Truck& truck) const{ return this->totalCapacity > truck.totalCapacity;}
     bool operator<(const Truck& truck) const{ return !operator>(truck);}
 };
-
