@@ -2,7 +2,7 @@
 
 Route::Route(Truck *truck, int type):truck(truck), type(type), remainingCapacity(truck->totalCapacity), cost(0){}
 
-Route::~Route() { cout<< "Deleting Route" << endl; }
+Route::~Route() {}
 
 int Route::getTypeIndex(){ return this->type - 1; }
 

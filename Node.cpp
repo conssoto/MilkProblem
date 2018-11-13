@@ -2,7 +2,7 @@
 
 Node::Node(int id, int production, int type): id(id), production(production), type(type) {}
 
-Node::~Node(){cout<< "Deleting Node" << endl; }
+Node::~Node(){}
 
 
 int Node::getId(){ return this->id; }

@@ -2,7 +2,7 @@
 
 Reader::Reader(string option): filePath("Instances/instancia" + string(option) + ".mcsb") {}
 
-Reader::~Reader(){ cout<< "Deleting File Reader" << endl; }
+Reader::~Reader() { cout << "Deleting File Reader" << endl; }
 
 
 ProblemInstance *Reader::readInputFile(){
