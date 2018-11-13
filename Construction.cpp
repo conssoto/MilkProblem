@@ -39,8 +39,9 @@ vector<Trip *> Construction::getOptions(Solution *solution, int currentType, Nod
 void Construction::setNeighborhood(Solution *solution) {
     Node *currentNode = solution->getCurrentNode();
     int currentType(solution->getUnsatisfiedType());
+    cout << currentType << endl;
 
-    //si volvio a la planta se crea nueva ruta.
+    //si volvio a la planta, por que ya se lleno el camion, se crea nueva ruta.
     if (currentNode->getId() == 0 && !solution->routes.back()->trips.empty()) {
         solution->addRoute(currentType);
     }
@@ -90,12 +91,9 @@ void Construction::feasibleSolution(Solution *solution) {
     int count(0);
     while(solution->getUnsatisfiedType()!=-1){
         cout << "------------------------ while it: " << count << endl;
+        solution->printAll();
         setNeighborhood(solution);
-        for (Trip *trip: this->neighborhood){
-            cout << trip->finalNode->getId() << endl;
-        }
         Trip *trip = roulette();
-        cout << "selected" << trip->finalNode->getId() << endl;
         solution->addTrip(trip);
 
         solution->updateSolution(trip);

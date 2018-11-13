@@ -96,25 +96,28 @@ void Solution::addRoute(int type) {
     auto route = new Route(truck, type);
     this->routes.push_back(route);
     this->removeTruck(truck);
+    cout << "asdfsdf" << endl;
 }
 
 int Solution::getUnsatisfiedType() {
-    for (int i = 0; i < this->unsatisfiedDemand.size(); ++i) {
-        if (this->unsatisfiedDemand[i] != 0) {
-            return i + 1;
-        }
+    if(this->unsatisfiedDemand.back() > 0){
+        return this->routes.back()->getType();
     }
-    return -1; //si ya se suplieron todas las demandas, devuelve cero
-}
+    return -1; //si el ultimo tipo ya se suplio, devuelve -1
 
-// entrega el ultimo nodo visitado
+//    for (int i = 0; i < this->unsatisfiedDemand.size(); ++i) {
+//        if (this->unsatisfiedDemand[i] != 0) {
+//            return i + 1;
+//        }
+//    }
+//    return -1; //si ya se suplieron todas las demandas, devuelve cero
+}
 Node *Solution::getCurrentNode(){
     if(this->routes.back()->trips.empty()){
         return this->plant;
     }
     return routes.back()->trips.back()->finalNode;
 }
-
 
 // entrega el camion mas grande
 Truck *Solution::getNextTruck() {
@@ -145,10 +148,12 @@ void Solution::decreaseDemand(int position, int production) {
 void Solution::updateDemands(int position, Trip *trip, int production) { // TODO cuando se satisface la leche sigue con la siguiente en otra ruta
     decreaseDemand(position, production);
     if(this->unsatisfiedDemand[position] < 0){
-        if(position < this->unsatisfiedDemand.size()) {
+        Trip *toPlant = newTrip(trip->finalNode, this->plant);
+        addTrip(toPlant);
+        if(position+1 < this->unsatisfiedDemand.size()) {
             decreaseDemand(position+1, -this->unsatisfiedDemand[position]); // si se pasa del size
-            Trip *toPlant = newTrip(trip->finalNode, this->plant);
-            addTrip(toPlant);
+            addRoute(position+2);
+
         }
     }
 }
@@ -179,7 +184,6 @@ void Solution::updateSolution(Trip *trip) {
         updateDemands(this->routes.back()->getTypeIndex(), trip, tripProduction);
         removeNode(trip->finalNode);
     }
-    printAll();
 }
 
 void Solution::printAll() {
