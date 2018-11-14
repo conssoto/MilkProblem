@@ -8,18 +8,23 @@ ProblemInstance::ProblemInstance(int totalNodes){
 }
 
 ProblemInstance::~ProblemInstance(){
-    cout<< "Deleting distances" << endl;
+    cout << "Deleting Problem Instance" << endl;
+
     for (int i = 0; i < this->getNumberOfNodes(); ++i){
         delete[] this->distances[i];
     }
     delete[] distances;
 
-    cout << "Deleting all trucks" << endl;
-//    for (vector<Truck *>::iterator it = trucks.begin(); it != trucks.end(); ++it){
-//        delete (*it);
-//    }
-//    trucks.clear();
-} //eliminar cada lista de vectores
+    for (Truck *truck: this->trucks){
+        delete truck;
+    }
+    trucks.clear();
+
+    for (Node *node: this->nodes){
+        delete node;
+    }
+    nodes.clear();
+}
 
 
 double ProblemInstance::getNumberOfNodes(){ return this->nodes.size(); }
@@ -48,12 +53,12 @@ void ProblemInstance::printAll(){
         cout << "quality: " << q << endl;
     }
     for(Node *n: this->nodes){
-        cout << "type: " << n->getType() << " node: " << n->getId() << endl;
+        cout << " node: " << n->getId() << " type: " << n->getType() << " prod: " << n->getProduction() << endl;
     }
     for(Truck *t: this->trucks){
         cout << "truck: " << t->getId() << endl;
     }
-    cout << "distance:" << this->distances[0][0] << endl;
+    cout << "distances:" << this->distances[0][0] << endl; //matriz con diagonal de ceros
 }
 
 void ProblemInstance::sortNodes(){ sort(nodes.begin(),nodes.end(), sortByType); }

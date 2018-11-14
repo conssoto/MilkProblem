@@ -3,6 +3,6 @@
 Trip::Trip(int id, Node * initialNode, Node * finalNode, int distance):
         id(id), initialNode(initialNode), finalNode(finalNode), distance(distance){}
 
-Trip::~Trip(){cout<< "Deleting Node" << endl;}
+Trip::~Trip(){}
 
 bool sortByDistance(const Trip *t1, const Trip *t2){ return t1->distance < t2->distance; }

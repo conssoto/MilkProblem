@@ -2,8 +2,8 @@
 #include "Reader.h"
 #include "Truck.h"
 #include "Node.h"
-//#include "Solution.h"
-//#include "Construction.h"
+#include "Solution.h"
+#include "Construction.h"
 
 using namespace std;
 
@@ -15,21 +15,26 @@ int main() {
 //    cin.getline(instanceOption, 3);
 //    srand(4);
     ProblemInstance *problemInstance;
-//    Reader r(instanceOption);
-    Reader r("1");
-    problemInstance = r.readInputFile();
-//    problemInstance->printAll();
 
-//    auto *solution = new Solution(problemInstance);
+//    Reader r(instanceOption);
+    Reader r("2");
+    problemInstance = r.readInputFile();
+
+    auto *solution = new Solution(problemInstance);
+    auto *construction = new Construction(5);
+
+    construction->feasibleSolution(solution);
+    delete solution;
+
 //    construction->feasibleSolution(solution, problemInstance);
 //
 //    cout << "Distance cost: " << solution->kilometerCost *  solution->distance << endl;
 //
 //    cout << "Milk cost: " << endl;
 //    double suma(0);
-//    for(int i = 0; i < solution->recolected.size(); ++i){
-//        suma +=solution->recolected[i] * solution->literCost[i];
-//        cout << solution->recolected[i] * solution->literCost[i] << endl;
+//    for(int i = 0; i < solution->recollected.size(); ++i){
+//        suma +=solution->recollected[i] * solution->literCost[i];
+//        cout << solution->recollected[i] * solution->literCost[i] << endl;
 //    }
 //    cout << "Total Milk cost: " << suma << endl;
 

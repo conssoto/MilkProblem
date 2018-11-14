@@ -123,6 +123,33 @@ newMCPB/fast:
 	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/build
 .PHONY : newMCPB/fast
 
+Construction.o: Construction.cpp.o
+
+.PHONY : Construction.o
+
+# target to build an object file
+Construction.cpp.o:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Construction.cpp.o
+.PHONY : Construction.cpp.o
+
+Construction.i: Construction.cpp.i
+
+.PHONY : Construction.i
+
+# target to preprocess a source file
+Construction.cpp.i:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Construction.cpp.i
+.PHONY : Construction.cpp.i
+
+Construction.s: Construction.cpp.s
+
+.PHONY : Construction.s
+
+# target to generate assembly for a file
+Construction.cpp.s:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Construction.cpp.s
+.PHONY : Construction.cpp.s
+
 Node.o: Node.cpp.o
 
 .PHONY : Node.o
@@ -231,6 +258,33 @@ Route.cpp.s:
 	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Route.cpp.s
 .PHONY : Route.cpp.s
 
+Solution.o: Solution.cpp.o
+
+.PHONY : Solution.o
+
+# target to build an object file
+Solution.cpp.o:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Solution.cpp.o
+.PHONY : Solution.cpp.o
+
+Solution.i: Solution.cpp.i
+
+.PHONY : Solution.i
+
+# target to preprocess a source file
+Solution.cpp.i:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Solution.cpp.i
+.PHONY : Solution.cpp.i
+
+Solution.s: Solution.cpp.s
+
+.PHONY : Solution.s
+
+# target to generate assembly for a file
+Solution.cpp.s:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Solution.cpp.s
+.PHONY : Solution.cpp.s
+
 Trip.o: Trip.cpp.o
 
 .PHONY : Trip.o
@@ -321,6 +375,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... newMCPB"
+	@echo "... Construction.o"
+	@echo "... Construction.i"
+	@echo "... Construction.s"
 	@echo "... Node.o"
 	@echo "... Node.i"
 	@echo "... Node.s"
@@ -333,6 +390,9 @@ help:
 	@echo "... Route.o"
 	@echo "... Route.i"
 	@echo "... Route.s"
+	@echo "... Solution.o"
+	@echo "... Solution.i"
+	@echo "... Solution.s"
 	@echo "... Trip.o"
 	@echo "... Trip.i"
 	@echo "... Trip.s"
