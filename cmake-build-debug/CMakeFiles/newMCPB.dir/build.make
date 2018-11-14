@@ -161,18 +161,18 @@ CMakeFiles/newMCPB.dir/Solution.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/newMCPB.dir/Solution.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/constanzasoto/TT1-TT2/newMCPB/Solution.cpp -o CMakeFiles/newMCPB.dir/Solution.cpp.s
 
-CMakeFiles/newMCPB.dir/Constructor.cpp.o: CMakeFiles/newMCPB.dir/flags.make
-CMakeFiles/newMCPB.dir/Constructor.cpp.o: ../Constructor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/constanzasoto/TT1-TT2/newMCPB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/newMCPB.dir/Constructor.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/newMCPB.dir/Constructor.cpp.o -c /Users/constanzasoto/TT1-TT2/newMCPB/Constructor.cpp
+CMakeFiles/newMCPB.dir/Construction.cpp.o: CMakeFiles/newMCPB.dir/flags.make
+CMakeFiles/newMCPB.dir/Construction.cpp.o: ../Construction.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/constanzasoto/TT1-TT2/newMCPB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/newMCPB.dir/Construction.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/newMCPB.dir/Construction.cpp.o -c /Users/constanzasoto/TT1-TT2/newMCPB/Construction.cpp
 
-CMakeFiles/newMCPB.dir/Constructor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/newMCPB.dir/Constructor.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/constanzasoto/TT1-TT2/newMCPB/Constructor.cpp > CMakeFiles/newMCPB.dir/Constructor.cpp.i
+CMakeFiles/newMCPB.dir/Construction.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/newMCPB.dir/Construction.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/constanzasoto/TT1-TT2/newMCPB/Construction.cpp > CMakeFiles/newMCPB.dir/Construction.cpp.i
 
-CMakeFiles/newMCPB.dir/Constructor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/newMCPB.dir/Constructor.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/constanzasoto/TT1-TT2/newMCPB/Constructor.cpp -o CMakeFiles/newMCPB.dir/Constructor.cpp.s
+CMakeFiles/newMCPB.dir/Construction.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/newMCPB.dir/Construction.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/constanzasoto/TT1-TT2/newMCPB/Construction.cpp -o CMakeFiles/newMCPB.dir/Construction.cpp.s
 
 # Object files for target newMCPB
 newMCPB_OBJECTS = \
@@ -184,7 +184,7 @@ newMCPB_OBJECTS = \
 "CMakeFiles/newMCPB.dir/ProblemInstance.cpp.o" \
 "CMakeFiles/newMCPB.dir/Reader.cpp.o" \
 "CMakeFiles/newMCPB.dir/Solution.cpp.o" \
-"CMakeFiles/newMCPB.dir/Constructor.cpp.o"
+"CMakeFiles/newMCPB.dir/Construction.cpp.o"
 
 # External object files for target newMCPB
 newMCPB_EXTERNAL_OBJECTS =
@@ -197,7 +197,7 @@ newMCPB: CMakeFiles/newMCPB.dir/Truck.cpp.o
 newMCPB: CMakeFiles/newMCPB.dir/ProblemInstance.cpp.o
 newMCPB: CMakeFiles/newMCPB.dir/Reader.cpp.o
 newMCPB: CMakeFiles/newMCPB.dir/Solution.cpp.o
-newMCPB: CMakeFiles/newMCPB.dir/Constructor.cpp.o
+newMCPB: CMakeFiles/newMCPB.dir/Construction.cpp.o
 newMCPB: CMakeFiles/newMCPB.dir/build.make
 newMCPB: CMakeFiles/newMCPB.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/constanzasoto/TT1-TT2/newMCPB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable newMCPB"

@@ -76,12 +76,28 @@ void Solution::setUnvisitedNodes(vector<Node *> nodes){
     }
 }
 
+
+vector<Route *> Solution::getUnfilledRoutes(){
+    vector<Route *> unfilledRoutes;
+    for(Route *route: this->routes){
+        if(!route->isFull()){
+            unfilledRoutes.push_back(route);
+        }
+    }
+    return unfilledRoutes;
+}
+
+
 void Solution::addNode(Node *node){return this->unvisitedNodes.push_back(node);}
 
 void Solution::addTruck(Truck *truck){this->unusedTrucks.push_back(truck);}
 
 void Solution::addTrip(Trip *trip){
     this->routes.back()->trips.push_back(trip);
+}
+
+void Solution::addTrip(Trip *trip, Route *route){
+    route->trips.push_back(trip);
 }
 
 Trip *Solution::newTrip(Node *node1, Node *node2){
@@ -92,11 +108,12 @@ Trip *Solution::newTrip(Node *node1, Node *node2){
 //crea una nueva ruta a partir del siguiente camion mas grande y lo saca de la lista unused trucks
 // TODO podria ser a partir del camion con capacidad mas cercana a la demanda de calidad actual
 void Solution::addRoute(int type) {
-    Truck *truck = this->getNextTruck();
-    auto route = new Route(truck, type);
-    this->routes.push_back(route);
-    this->removeTruck(truck);
-    cout << "asdfsdf" << endl;
+    if(!this->unusedTrucks.empty()){
+        Truck *truck = this->getNextTruck();
+        auto route = new Route(truck, type);
+        this->routes.push_back(route);
+        this->removeTruck(truck);
+    }
 }
 
 int Solution::getUnsatisfiedType() {
@@ -150,6 +167,7 @@ void Solution::updateDemands(int position, Trip *trip, int production) { // TODO
     if(this->unsatisfiedDemand[position] < 0){
         Trip *toPlant = newTrip(trip->finalNode, this->plant);
         addTrip(toPlant);
+        this->distance += toPlant->distance;
         if(position+1 < this->unsatisfiedDemand.size()) {
             decreaseDemand(position+1, -this->unsatisfiedDemand[position]); // si se pasa del size
             addRoute(position+2);
@@ -157,6 +175,24 @@ void Solution::updateDemands(int position, Trip *trip, int production) { // TODO
         }
     }
 }
+
+void Solution::updateDemands(int position, Trip *trip, int production, Route *route) { // TODO cuando se satisface la leche sigue con la siguiente en otra ruta
+    for(int i = position; i < this->unsatisfiedDemand.size(); ++i){
+        cout << "i " << i << endl;
+        cout << "this->unsatisfiedDemand[i] " << this->unsatisfiedDemand[i] << endl;
+        if( this->unsatisfiedDemand[i] > 0){
+            decreaseDemand(i, production);
+            if ( this->unsatisfiedDemand[i] < 0){
+                Trip *toPlant = newTrip(trip->finalNode, this->plant);
+                addTrip(toPlant, route);
+                this->distance += toPlant->distance;
+            }
+            break;
+        }
+        decreaseDemand(i, production);
+    }
+}
+
 
 //int Solution::updateDemands(int position, Trip *trip, int production) { // TODO cuando se satisface la leche sigue con la siguiente en otra ruta
 //    if (this->unsatisfiedDemand[position] > production){
@@ -181,10 +217,30 @@ void Solution::updateSolution(Trip *trip) {
         int tripProduction(trip->finalNode->getProduction());
         this->recollected[trip->finalNode->getTypeIndex()] += tripProduction;
         this->routes.back()->remainingCapacity -= tripProduction;
+        if(this->routes.back()->remainingCapacity == 0){
+            this->routes.back()->setFull();
+        }
         updateDemands(this->routes.back()->getTypeIndex(), trip, tripProduction);
         removeNode(trip->finalNode);
     }
 }
+
+
+void Solution::updateSolution(Trip *trip, Route *route) {
+    this->distance += trip->distance;
+    if (trip->finalNode != this->plant) {
+        int tripProduction(trip->finalNode->getProduction());
+        this->recollected[trip->finalNode->getTypeIndex()] += tripProduction;
+        route->remainingCapacity -= tripProduction;
+        if(route->remainingCapacity == 0){
+            route->setFull();
+        }
+        updateDemands(route->getTypeIndex(), trip, tripProduction, route);
+        removeNode(trip->finalNode);
+    }
+}
+
+
 
 void Solution::printAll() {
     cout << "distance: " << this->distance << endl;
@@ -236,7 +292,7 @@ void Solution::printAll() {
 
 void Solution::printRoute() {
     for (Route *r: this->routes) {
-        cout << "Route truck: " << r->truck->getId() << " milk type: " << r->type << endl;
+        cout << "Route truck: " << r->truck->getId() << " milk type: " << r->type << " isFull: " << r->full << endl;
         cout << "Num. of trips: " << r->trips.size() << " remaining Capacity: " << r->remainingCapacity << endl;
         for (Trip *trip: r->trips) {
             cout << "from: " << trip->initialNode->getId() << " to: " << trip->finalNode->getId() << " type: "

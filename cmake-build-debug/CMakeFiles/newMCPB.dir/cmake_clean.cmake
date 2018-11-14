@@ -7,7 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/newMCPB.dir/ProblemInstance.cpp.o"
   "CMakeFiles/newMCPB.dir/Reader.cpp.o"
   "CMakeFiles/newMCPB.dir/Solution.cpp.o"
-  "CMakeFiles/newMCPB.dir/Constructor.cpp.o"
+  "CMakeFiles/newMCPB.dir/Construction.cpp.o"
   "newMCPB.pdb"
   "newMCPB"
 )

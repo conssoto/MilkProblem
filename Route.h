@@ -13,6 +13,7 @@ public:
     double cost;
     int remainingCapacity;
     int type;
+    bool full;
 
 
 public:
@@ -21,6 +22,9 @@ public:
 
     int getTypeIndex();
     int getType();
+    bool isFull();
 
+
+    void setFull();
     bool FirstTrip();
 };

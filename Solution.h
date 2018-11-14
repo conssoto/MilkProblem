@@ -32,9 +32,12 @@ public:
     explicit Solution(ProblemInstance *problemInstance);
     ~Solution();
 
+    void updateSolution(Trip *trip, Route *route);
     void updateSolution(Trip *trip);
     void decreaseDemand(int position, int production);
     void updateDemands(int position, Trip *trip, int production);
+    void updateDemands(int position, Trip *trip, int production, Route *route);
+
 
     void setQualities(double size);
     void setRecollected(double size);
@@ -45,9 +48,11 @@ public:
     void addNode(Node *node);
     void addRoute(int type);
     void addTrip(Trip *trip);
+    void addTrip(Trip *trip, Route *route);
 
     Trip *newTrip(Node *node1, Node *node2);
 
+    vector<Route *> getUnfilledRoutes();
     int getUnsatisfiedType();
     Node *getCurrentNode();
     Truck *getNextTruck();

@@ -17,7 +17,7 @@ int main() {
     ProblemInstance *problemInstance;
 
 //    Reader r(instanceOption);
-    Reader r("1");
+    Reader r("2");
     problemInstance = r.readInputFile();
 
     auto *solution = new Solution(problemInstance);

@@ -49,6 +49,7 @@ void Construction::setNeighborhood(Solution *solution) {
 
     // si no hay opciones, vuelvo a la planta.
     if (options.empty()) {
+        solution->routes.back()->setFull();
         options.push_back(solution->newTrip(currentNode, solution->plant));
     }
     this->neighborhood = options;
@@ -88,18 +89,64 @@ Trip *Construction::roulette() { // TODO borrar los no selectionados
 
 
 void Construction::feasibleSolution(Solution *solution) {
-    int count(0);
-    while(solution->getUnsatisfiedType()!=-1){
-        cout << "------------------------ while it: " << count << endl;
-        solution->printAll();
+    // fase 1
+    int count1(0);
+    while (solution->getUnsatisfiedType() != -1) {
+        cout << "------------------------ while it fase 1: " << count1 << endl;
+
         setNeighborhood(solution);
         Trip *trip = roulette();
         solution->addTrip(trip);
-
         solution->updateSolution(trip);
-        cout << "aca" << endl;
 
-        count ++;
+        count1++;
+
+        if (solution->unusedTrucks.empty() && !solution->routes.back()->trips.empty() &&
+            solution->routes.back()->trips.back()->finalNode == solution->plant) {
+            break;
+        }
 
     }
+    solution->printAll();
+
+    // fase 2
+    int count2(0);
+
+    while (solution->getUnsatisfiedType() != -1) {
+        cout << "------------------------ while it fase 2: " << count2 << endl;
+
+
+
+
+
+        vector<Route *> unfilledRoutes(solution->getUnfilledRoutes());
+        Route *currentRoute(unfilledRoutes.back());
+        solution->distance-=currentRoute->trips.back()->distance; // disminuyo la distancia de vuelta a la plata
+        currentRoute->trips.pop_back(); //saco la vuelta a la planta
+        vector<Trip *> options(getOptions(solution,currentRoute->getType(), currentRoute->trips.back()->finalNode));
+        if (options.empty()) {
+            currentRoute->setFull();
+            options.push_back(solution->newTrip(currentRoute->trips.back()->finalNode, solution->plant));
+        }
+        this->neighborhood = options;
+
+        Trip *trip = roulette();
+
+        solution->addTrip(trip, currentRoute);
+        solution->updateSolution(trip, currentRoute);
+
+
+
+        count2++;
+    }
+    solution->printAll();
+
 }
+
+
+
+/*
+
+
+
+}*/
