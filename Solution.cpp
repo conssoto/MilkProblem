@@ -178,8 +178,6 @@ void Solution::updateDemands(int position, Trip *trip, int production) { // TODO
 
 void Solution::updateDemands(int position, Trip *trip, int production, Route *route) { // TODO cuando se satisface la leche sigue con la siguiente en otra ruta
     for(int i = position; i < this->unsatisfiedDemand.size(); ++i){
-        cout << "i " << i << endl;
-        cout << "this->unsatisfiedDemand[i] " << this->unsatisfiedDemand[i] << endl;
         if( this->unsatisfiedDemand[i] > 0){
             decreaseDemand(i, production);
             if ( this->unsatisfiedDemand[i] < 0){
@@ -194,22 +192,6 @@ void Solution::updateDemands(int position, Trip *trip, int production, Route *ro
 }
 
 
-//int Solution::updateDemands(int position, Trip *trip, int production) { // TODO cuando se satisface la leche sigue con la siguiente en otra ruta
-//    if (this->unsatisfiedDemand[position] > production){
-//        this->unsatisfiedDemand[position] -= production;
-//    }
-//    else{
-//        for(int i = position; i < this->unsatisfiedDemand.size(); ++i){
-//            int rest(production - this->unsatisfiedDemand[position]); //exceso de leche
-//            this->unsatisfiedDemand[i]=0;
-//            this->unsatisfiedDemand[i+1]-=rest;
-//            Trip *toPlant = newTrip(trip->finalNode, this->plant);
-//            addTrip(toPlant);
-//        }
-//    }
-//
-//
-//}
 
 void Solution::updateSolution(Trip *trip) {
     this->distance += trip->distance;

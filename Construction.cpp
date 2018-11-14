@@ -39,7 +39,6 @@ vector<Trip *> Construction::getOptions(Solution *solution, int currentType, Nod
 void Construction::setNeighborhood(Solution *solution) {
     Node *currentNode = solution->getCurrentNode();
     int currentType(solution->getUnsatisfiedType());
-    cout << currentType << endl;
 
     //si volvio a la planta, por que ya se lleno el camion, se crea nueva ruta.
     if (currentNode->getId() == 0 && !solution->routes.back()->trips.empty()) {
@@ -90,63 +89,36 @@ Trip *Construction::roulette() { // TODO borrar los no selectionados
 
 void Construction::feasibleSolution(Solution *solution) {
     // fase 1
-    int count1(0);
     while (solution->getUnsatisfiedType() != -1) {
-        cout << "------------------------ while it fase 1: " << count1 << endl;
-
         setNeighborhood(solution);
         Trip *trip = roulette();
         solution->addTrip(trip);
         solution->updateSolution(trip);
 
-        count1++;
-
         if (solution->unusedTrucks.empty() && !solution->routes.back()->trips.empty() &&
             solution->routes.back()->trips.back()->finalNode == solution->plant) {
-            break;
+            break; // iniciar fase 2
         }
-
     }
     solution->printAll();
 
     // fase 2
-    int count2(0);
-
     while (solution->getUnsatisfiedType() != -1) {
-        cout << "------------------------ while it fase 2: " << count2 << endl;
-
-
-
-
-
         vector<Route *> unfilledRoutes(solution->getUnfilledRoutes());
         Route *currentRoute(unfilledRoutes.back());
-        solution->distance-=currentRoute->trips.back()->distance; // disminuyo la distancia de vuelta a la plata
-        currentRoute->trips.pop_back(); //saco la vuelta a la planta
+        if(currentRoute->trips.back()->finalNode == solution->plant){
+            solution->distance-=currentRoute->trips.back()->distance; // disminuyo la distancia de vuelta a la plata
+            currentRoute->trips.pop_back(); //saco la vuelta a la planta
+        }
         vector<Trip *> options(getOptions(solution,currentRoute->getType(), currentRoute->trips.back()->finalNode));
         if (options.empty()) {
             currentRoute->setFull();
             options.push_back(solution->newTrip(currentRoute->trips.back()->finalNode, solution->plant));
         }
         this->neighborhood = options;
-
         Trip *trip = roulette();
-
         solution->addTrip(trip, currentRoute);
         solution->updateSolution(trip, currentRoute);
-
-
-
-        count2++;
     }
     solution->printAll();
-
 }
-
-
-
-/*
-
-
-
-}*/
