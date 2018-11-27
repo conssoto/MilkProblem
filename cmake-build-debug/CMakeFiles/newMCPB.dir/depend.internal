@@ -10,6 +10,8 @@ CMakeFiles/newMCPB.dir/Construction.cpp.o
  /Users/constanzasoto/TT1-TT2/newMCPB/Solution.h
  /Users/constanzasoto/TT1-TT2/newMCPB/Trip.h
  /Users/constanzasoto/TT1-TT2/newMCPB/Truck.h
+CMakeFiles/newMCPB.dir/DeleteNode.cpp.o
+ /Users/constanzasoto/TT1-TT2/newMCPB/DeleteNode.cpp
 CMakeFiles/newMCPB.dir/Node.cpp.o
  /Users/constanzasoto/TT1-TT2/newMCPB/Node.cpp
  /Users/constanzasoto/TT1-TT2/newMCPB/Node.h
@@ -42,6 +44,15 @@ CMakeFiles/newMCPB.dir/Solution.cpp.o
  /Users/constanzasoto/TT1-TT2/newMCPB/Solution.h
  /Users/constanzasoto/TT1-TT2/newMCPB/Trip.h
  /Users/constanzasoto/TT1-TT2/newMCPB/Truck.h
+CMakeFiles/newMCPB.dir/SwapNode.cpp.o
+ /Users/constanzasoto/TT1-TT2/newMCPB/Node.h
+ /Users/constanzasoto/TT1-TT2/newMCPB/ProblemInstance.h
+ /Users/constanzasoto/TT1-TT2/newMCPB/Route.h
+ /Users/constanzasoto/TT1-TT2/newMCPB/Solution.h
+ /Users/constanzasoto/TT1-TT2/newMCPB/SwapNode.cpp
+ /Users/constanzasoto/TT1-TT2/newMCPB/SwapNode.h
+ /Users/constanzasoto/TT1-TT2/newMCPB/Trip.h
+ /Users/constanzasoto/TT1-TT2/newMCPB/Truck.h
 CMakeFiles/newMCPB.dir/Trip.cpp.o
  /Users/constanzasoto/TT1-TT2/newMCPB/Node.h
  /Users/constanzasoto/TT1-TT2/newMCPB/Trip.cpp
@@ -51,11 +62,13 @@ CMakeFiles/newMCPB.dir/Truck.cpp.o
  /Users/constanzasoto/TT1-TT2/newMCPB/Truck.h
 CMakeFiles/newMCPB.dir/main.cpp.o
  /Users/constanzasoto/TT1-TT2/newMCPB/Construction.h
+ /Users/constanzasoto/TT1-TT2/newMCPB/DeleteNode.h
  /Users/constanzasoto/TT1-TT2/newMCPB/Node.h
  /Users/constanzasoto/TT1-TT2/newMCPB/ProblemInstance.h
  /Users/constanzasoto/TT1-TT2/newMCPB/Reader.h
  /Users/constanzasoto/TT1-TT2/newMCPB/Route.h
  /Users/constanzasoto/TT1-TT2/newMCPB/Solution.h
+ /Users/constanzasoto/TT1-TT2/newMCPB/SwapNode.h
  /Users/constanzasoto/TT1-TT2/newMCPB/Trip.h
  /Users/constanzasoto/TT1-TT2/newMCPB/Truck.h
  /Users/constanzasoto/TT1-TT2/newMCPB/main.cpp

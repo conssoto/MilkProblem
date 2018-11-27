@@ -53,7 +53,8 @@ void ProblemInstance::printAll(){
         cout << "quality: " << q << endl;
     }
     for(Node *n: this->nodes){
-        cout << " node: " << n->getId() << " type: " << n->getType() << " prod: " << n->getProduction() << endl;
+//        cout << " node: " << n->getId() << " type: " << n->getType() << " prod: " << n->getProduction() << endl;
+        cout << n->getProduction() << endl;
     }
     for(Truck *t: this->trucks){
         cout << "truck: " << t->getId() << endl;

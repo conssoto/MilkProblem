@@ -88,29 +88,26 @@ vector<Route *> Solution::getUnfilledRoutes(){
 }
 
 
-void Solution::addNode(Node *node){return this->unvisitedNodes.push_back(node);}
+void Solution::addNode(Node *node){this->unvisitedNodes.push_back(node);}
 
 void Solution::addTruck(Truck *truck){this->unusedTrucks.push_back(truck);}
 
-void Solution::addTrip(Trip *trip){
-    this->routes.back()->trips.push_back(trip);
-}
+void Solution::addTrip(Trip *trip){this->routes.back()->trips.push_back(trip);}
 
-void Solution::addTrip(Trip *trip, Route *route){
-    route->trips.push_back(trip);
-}
+void Solution::addTrip(Trip *trip, Route *route){route->trips.push_back(trip);}
 
 Trip *Solution::newTrip(Node *node1, Node *node2){
     int distance(problemInstance->calculateDistance(node1, node2));
-    return new Trip(0, node1, node2, distance); // TODO arreglar el id trip
+    return new Trip(node1, node2, distance); // TODO arreglar el id trip
 }
 
 //crea una nueva ruta a partir del siguiente camion mas grande y lo saca de la lista unused trucks
 // TODO podria ser a partir del camion con capacidad mas cercana a la demanda de calidad actual
 void Solution::addRoute(int type) {
     if(!this->unusedTrucks.empty()){
+        int routeId(this->routes.size()+1);
         Truck *truck = this->getNextTruck();
-        auto route = new Route(truck, type);
+        auto route = new Route(routeId, truck, type);
         this->routes.push_back(route);
         this->removeTruck(truck);
     }
@@ -121,14 +118,8 @@ int Solution::getUnsatisfiedType() {
         return this->routes.back()->getType();
     }
     return -1; //si el ultimo tipo ya se suplio, devuelve -1
-
-//    for (int i = 0; i < this->unsatisfiedDemand.size(); ++i) {
-//        if (this->unsatisfiedDemand[i] != 0) {
-//            return i + 1;
-//        }
-//    }
-//    return -1; //si ya se suplieron todas las demandas, devuelve cero
 }
+
 Node *Solution::getCurrentNode(){
     if(this->routes.back()->trips.empty()){
         return this->plant;
@@ -195,6 +186,7 @@ void Solution::updateDemands(int position, Trip *trip, int production, Route *ro
 
 void Solution::updateSolution(Trip *trip) {
     this->distance += trip->distance;
+    this->routes.back()->distance += trip->distance;
     if (trip->finalNode != this->plant) {
         int tripProduction(trip->finalNode->getProduction());
         this->recollected[trip->finalNode->getTypeIndex()] += tripProduction;
@@ -210,6 +202,7 @@ void Solution::updateSolution(Trip *trip) {
 
 void Solution::updateSolution(Trip *trip, Route *route) {
     this->distance += trip->distance;
+    route->distance += trip->distance;
     if (trip->finalNode != this->plant) {
         int tripProduction(trip->finalNode->getProduction());
         this->recollected[trip->finalNode->getTypeIndex()] += tripProduction;
@@ -219,6 +212,13 @@ void Solution::updateSolution(Trip *trip, Route *route) {
         }
         updateDemands(route->getTypeIndex(), trip, tripProduction, route);
         removeNode(trip->finalNode);
+    }
+}
+
+void Solution::updateDistance(int distance){
+    this->distance = 0;
+    for(Route *route: this->routes){
+        this->distance += route->distance;
     }
 }
 
@@ -274,10 +274,11 @@ void Solution::printAll() {
 
 void Solution::printRoute() {
     for (Route *r: this->routes) {
-        cout << "Route truck: " << r->truck->getId() << " milk type: " << r->type << " isFull: " << r->full << endl;
+        cout << endl;
+        cout << "Route: " << r->getId() << " truck: " << r->truck->getId() << " milk type: " << r->type << " isFull: " << r->full << endl;
         cout << "Num. of trips: " << r->trips.size() << " remaining Capacity: " << r->remainingCapacity << endl;
         for (Trip *trip: r->trips) {
-            cout << "from: " << trip->initialNode->getId() << " to: " << trip->finalNode->getId() << " type: "
+            cout << "trip: " << trip->routeId << " from: " << trip->initialNode->getId() << " to: " << trip->finalNode->getId() << " type: "
                  << trip->finalNode->getType() << " prod: " << trip->finalNode->getProduction() << endl;
         }
     }

@@ -150,6 +150,33 @@ Construction.cpp.s:
 	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Construction.cpp.s
 .PHONY : Construction.cpp.s
 
+DeleteNode.o: DeleteNode.cpp.o
+
+.PHONY : DeleteNode.o
+
+# target to build an object file
+DeleteNode.cpp.o:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/DeleteNode.cpp.o
+.PHONY : DeleteNode.cpp.o
+
+DeleteNode.i: DeleteNode.cpp.i
+
+.PHONY : DeleteNode.i
+
+# target to preprocess a source file
+DeleteNode.cpp.i:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/DeleteNode.cpp.i
+.PHONY : DeleteNode.cpp.i
+
+DeleteNode.s: DeleteNode.cpp.s
+
+.PHONY : DeleteNode.s
+
+# target to generate assembly for a file
+DeleteNode.cpp.s:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/DeleteNode.cpp.s
+.PHONY : DeleteNode.cpp.s
+
 Node.o: Node.cpp.o
 
 .PHONY : Node.o
@@ -285,6 +312,33 @@ Solution.cpp.s:
 	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Solution.cpp.s
 .PHONY : Solution.cpp.s
 
+SwapNode.o: SwapNode.cpp.o
+
+.PHONY : SwapNode.o
+
+# target to build an object file
+SwapNode.cpp.o:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/SwapNode.cpp.o
+.PHONY : SwapNode.cpp.o
+
+SwapNode.i: SwapNode.cpp.i
+
+.PHONY : SwapNode.i
+
+# target to preprocess a source file
+SwapNode.cpp.i:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/SwapNode.cpp.i
+.PHONY : SwapNode.cpp.i
+
+SwapNode.s: SwapNode.cpp.s
+
+.PHONY : SwapNode.s
+
+# target to generate assembly for a file
+SwapNode.cpp.s:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/SwapNode.cpp.s
+.PHONY : SwapNode.cpp.s
+
 Trip.o: Trip.cpp.o
 
 .PHONY : Trip.o
@@ -378,6 +432,9 @@ help:
 	@echo "... Construction.o"
 	@echo "... Construction.i"
 	@echo "... Construction.s"
+	@echo "... DeleteNode.o"
+	@echo "... DeleteNode.i"
+	@echo "... DeleteNode.s"
 	@echo "... Node.o"
 	@echo "... Node.i"
 	@echo "... Node.s"
@@ -393,6 +450,9 @@ help:
 	@echo "... Solution.o"
 	@echo "... Solution.i"
 	@echo "... Solution.s"
+	@echo "... SwapNode.o"
+	@echo "... SwapNode.i"
+	@echo "... SwapNode.s"
 	@echo "... Trip.o"
 	@echo "... Trip.i"
 	@echo "... Trip.s"

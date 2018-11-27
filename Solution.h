@@ -37,7 +37,7 @@ public:
     void decreaseDemand(int position, int production);
     void updateDemands(int position, Trip *trip, int production);
     void updateDemands(int position, Trip *trip, int production, Route *route);
-
+    void updateDistance(int distance);
 
     void setQualities(double size);
     void setRecollected(double size);

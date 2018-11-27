@@ -26,9 +26,9 @@ Route.h
 Solution.h
 /Users/constanzasoto/TT1-TT2/newMCPB/Solution.h
 
-/Users/constanzasoto/TT1-TT2/newMCPB/Node.cpp
-Node.h
-/Users/constanzasoto/TT1-TT2/newMCPB/Node.h
+/Users/constanzasoto/TT1-TT2/newMCPB/DeleteNode.cpp
+
+/Users/constanzasoto/TT1-TT2/newMCPB/DeleteNode.h
 
 /Users/constanzasoto/TT1-TT2/newMCPB/Node.h
 iostream
@@ -104,6 +104,26 @@ iostream
 numeric
 -
 
+/Users/constanzasoto/TT1-TT2/newMCPB/SwapNode.cpp
+SwapNode.h
+/Users/constanzasoto/TT1-TT2/newMCPB/SwapNode.h
+
+/Users/constanzasoto/TT1-TT2/newMCPB/SwapNode.h
+iostream
+-
+vector
+-
+random
+-
+Trip.h
+/Users/constanzasoto/TT1-TT2/newMCPB/Trip.h
+ProblemInstance.h
+/Users/constanzasoto/TT1-TT2/newMCPB/ProblemInstance.h
+Route.h
+/Users/constanzasoto/TT1-TT2/newMCPB/Route.h
+Solution.h
+/Users/constanzasoto/TT1-TT2/newMCPB/Solution.h
+
 /Users/constanzasoto/TT1-TT2/newMCPB/Trip.cpp
 Trip.h
 /Users/constanzasoto/TT1-TT2/newMCPB/Trip.h
@@ -117,10 +137,6 @@ vector
 -
 memory
 -
-
-/Users/constanzasoto/TT1-TT2/newMCPB/Truck.cpp
-Truck.h
-/Users/constanzasoto/TT1-TT2/newMCPB/Truck.h
 
 /Users/constanzasoto/TT1-TT2/newMCPB/Truck.h
 iostream
@@ -139,4 +155,8 @@ Solution.h
 /Users/constanzasoto/TT1-TT2/newMCPB/Solution.h
 Construction.h
 /Users/constanzasoto/TT1-TT2/newMCPB/Construction.h
+DeleteNode.h
+/Users/constanzasoto/TT1-TT2/newMCPB/DeleteNode.h
+SwapNode.h
+/Users/constanzasoto/TT1-TT2/newMCPB/SwapNode.h
 
