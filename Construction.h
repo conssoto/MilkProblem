@@ -22,7 +22,7 @@ public:
     explicit Construction(unsigned long alpha);
     ~Construction();
 
-    void setNeighborhood(Solution *solution);
+    void setNeighborhood(Solution *solution, Route *currentRoute);
 
     bool fitsInTruck(Route *route, Node *node);
 
@@ -31,6 +31,7 @@ public:
     Trip *roulette();
     void setTotalProduction();
     void feasibleSolution(Solution *solution);
+    void updateIds(vector<Route *> routes);
 
 
 

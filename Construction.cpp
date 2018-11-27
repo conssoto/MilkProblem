@@ -36,22 +36,37 @@ vector<Trip *> Construction::getOptions(Solution *solution, int currentType, Nod
     return options;
 }
 
-void Construction::setNeighborhood(Solution *solution) {
-    Node *currentNode = solution->getCurrentNode();
-    int currentType(solution->getUnsatisfiedType());
-
-    //si volvio a la planta, por que ya se lleno el camion, se crea nueva ruta.
-    if (currentNode->getId() == 0 && !solution->routes.back()->trips.empty()) {
-        solution->addRoute(currentType);
+void Construction::setNeighborhood(Solution *solution, Route *currentRoute = nullptr) {
+    if (currentRoute){
+        if(currentRoute->trips.back()->finalNode == solution->plant){
+            solution->distance-=currentRoute->trips.back()->distance; // disminuyo la distancia de vuelta a la plata
+            currentRoute->distance -= currentRoute->trips.back()->distance;
+            currentRoute->trips.pop_back(); //saco la vuelta a la planta
+        }
+        vector<Trip *> options(getOptions(solution,currentRoute->getType(), currentRoute->trips.back()->finalNode));
+        if (options.empty()) {
+            currentRoute->setFull();
+            options.push_back(solution->newTrip(currentRoute->trips.back()->finalNode, solution->plant));
+        }
+        this->neighborhood = options;
     }
-    vector<Trip *> options(getOptions(solution, currentType, currentNode));
+    else{
+        Node *currentNode = solution->getCurrentNode();
+        int currentType(solution->getUnsatisfiedType());
 
-    // si no hay opciones, vuelvo a la planta.
-    if (options.empty()) {
-        solution->routes.back()->setFull();
-        options.push_back(solution->newTrip(currentNode, solution->plant));
+        //si volvio a la planta, por que ya se lleno el camion, se crea nueva ruta.
+        if (currentNode->getId() == 0 && !solution->routes.back()->trips.empty()) {
+            solution->addRoute(currentType);
+        }
+        vector<Trip *> options(getOptions(solution, currentType, currentNode));
+
+        // si no hay opciones, vuelvo a la planta.
+        if (options.empty()) {
+            solution->routes.back()->setFull();
+            options.push_back(solution->newTrip(currentNode, solution->plant));
+        }
+        this->neighborhood = options;
     }
-    this->neighborhood = options;
 }
 
 void Construction::setTotalProduction(){
@@ -62,7 +77,6 @@ void Construction::setTotalProduction(){
 }
 
 Trip *Construction::roulette() { // TODO borrar los no selectionados
-
     setTotalProduction();
     if (this->totalProduction == 0) { //volver a la planta
         return this->neighborhood[0];
@@ -85,7 +99,14 @@ Trip *Construction::roulette() { // TODO borrar los no selectionados
     }
 }
 
-
+void Construction::updateIds(vector<Route *> routes){
+    for (Route *r: routes){
+        int routeId(r->getId());
+        for (Trip *t: r->trips){
+            t->setRouteId(routeId);
+        }
+    }
+}
 
 void Construction::feasibleSolution(Solution *solution) {
     // fase 1
@@ -106,19 +127,11 @@ void Construction::feasibleSolution(Solution *solution) {
     while (solution->getUnsatisfiedType() != -1) {
         vector<Route *> unfilledRoutes(solution->getUnfilledRoutes());
         Route *currentRoute(unfilledRoutes.back());
-        if(currentRoute->trips.back()->finalNode == solution->plant){
-            solution->distance-=currentRoute->trips.back()->distance; // disminuyo la distancia de vuelta a la plata
-            currentRoute->trips.pop_back(); //saco la vuelta a la planta
-        }
-        vector<Trip *> options(getOptions(solution,currentRoute->getType(), currentRoute->trips.back()->finalNode));
-        if (options.empty()) {
-            currentRoute->setFull();
-            options.push_back(solution->newTrip(currentRoute->trips.back()->finalNode, solution->plant));
-        }
-        this->neighborhood = options;
+        setNeighborhood(solution, currentRoute);
         Trip *trip = roulette();
         solution->addTrip(trip, currentRoute);
         solution->updateSolution(trip, currentRoute);
     }
+    this->updateIds(solution->routes);
     solution->printAll();
 }

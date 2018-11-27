@@ -10,6 +10,8 @@ CMakeFiles/newMCPB.dir/Construction.cpp.o: ../Solution.h
 CMakeFiles/newMCPB.dir/Construction.cpp.o: ../Trip.h
 CMakeFiles/newMCPB.dir/Construction.cpp.o: ../Truck.h
 
+CMakeFiles/newMCPB.dir/DeleteNode.cpp.o: ../DeleteNode.cpp
+
 CMakeFiles/newMCPB.dir/Node.cpp.o: ../Node.cpp
 CMakeFiles/newMCPB.dir/Node.cpp.o: ../Node.h
 
@@ -42,6 +44,15 @@ CMakeFiles/newMCPB.dir/Solution.cpp.o: ../Solution.h
 CMakeFiles/newMCPB.dir/Solution.cpp.o: ../Trip.h
 CMakeFiles/newMCPB.dir/Solution.cpp.o: ../Truck.h
 
+CMakeFiles/newMCPB.dir/SwapNode.cpp.o: ../Node.h
+CMakeFiles/newMCPB.dir/SwapNode.cpp.o: ../ProblemInstance.h
+CMakeFiles/newMCPB.dir/SwapNode.cpp.o: ../Route.h
+CMakeFiles/newMCPB.dir/SwapNode.cpp.o: ../Solution.h
+CMakeFiles/newMCPB.dir/SwapNode.cpp.o: ../SwapNode.cpp
+CMakeFiles/newMCPB.dir/SwapNode.cpp.o: ../SwapNode.h
+CMakeFiles/newMCPB.dir/SwapNode.cpp.o: ../Trip.h
+CMakeFiles/newMCPB.dir/SwapNode.cpp.o: ../Truck.h
+
 CMakeFiles/newMCPB.dir/Trip.cpp.o: ../Node.h
 CMakeFiles/newMCPB.dir/Trip.cpp.o: ../Trip.cpp
 CMakeFiles/newMCPB.dir/Trip.cpp.o: ../Trip.h
@@ -50,11 +61,13 @@ CMakeFiles/newMCPB.dir/Truck.cpp.o: ../Truck.cpp
 CMakeFiles/newMCPB.dir/Truck.cpp.o: ../Truck.h
 
 CMakeFiles/newMCPB.dir/main.cpp.o: ../Construction.h
+CMakeFiles/newMCPB.dir/main.cpp.o: ../DeleteNode.h
 CMakeFiles/newMCPB.dir/main.cpp.o: ../Node.h
 CMakeFiles/newMCPB.dir/main.cpp.o: ../ProblemInstance.h
 CMakeFiles/newMCPB.dir/main.cpp.o: ../Reader.h
 CMakeFiles/newMCPB.dir/main.cpp.o: ../Route.h
 CMakeFiles/newMCPB.dir/main.cpp.o: ../Solution.h
+CMakeFiles/newMCPB.dir/main.cpp.o: ../SwapNode.h
 CMakeFiles/newMCPB.dir/main.cpp.o: ../Trip.h
 CMakeFiles/newMCPB.dir/main.cpp.o: ../Truck.h
 CMakeFiles/newMCPB.dir/main.cpp.o: ../main.cpp

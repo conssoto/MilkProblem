@@ -8,23 +8,26 @@ using namespace std;
 
 class Route {
 public:
+    int id;
     Truck *truck;
     vector<Trip *> trips;
     double cost;
     int remainingCapacity;
     int type;
     bool full;
+    double distance;
 
 
 public:
-    Route(Truck *truck, int type);
+    Route(int id, Truck *truck, int type);
     ~Route();
 
+    int getId();
     int getTypeIndex();
     int getType();
     bool isFull();
 
-
+    void setId(int id);
     void setFull();
     bool FirstTrip();
 };
