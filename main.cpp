@@ -21,9 +21,12 @@ int main() {
 
     auto *solution = new Solution(problemInstance);
     auto *construction = new Construction(5);
+
 //    auto *deletenode = new DeleteNode();
 
     construction->feasibleSolution(solution);
+    cout << "aca" << endl;
+
 //    deletenode->setDeletableTrips(solution, 1);
 //    cout << "ACA" << endl;
 //    for (Trip *t: deletenode->deletableTrips){
@@ -32,19 +35,21 @@ int main() {
 //    deletenode->deleteTrip(solution,1);
 //
 //    delete deletenode;
+
+
     auto *swapNode = new reorderNodes();
     for(Route *route: solution->routes){
-        cout << "inicio" << endl;
-        swapNode->printRoute(route);
+//        cout << "inicio" << endl;
+//        swapNode->printRoute(route);
         for(int i = 0; i < route->trips.size()-1; ++i){
-            swapNode->removeTrip(i, route, problemInstance);
+            swapNode->removeTrip(i, route, solution);
             swapNode->setBest(route, problemInstance);
-            swapNode->insertTrip(route, solution, problemInstance);
+            swapNode->insertTrip(route, solution);
         }
-        cout << "final" << endl;
-        swapNode->printRoute(route);
+//        cout << "final" << endl;
+//        swapNode->printRoute(route);
     }
-
+    solution->printAll();
 
 
 

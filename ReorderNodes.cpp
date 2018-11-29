@@ -4,15 +4,23 @@ reorderNodes::reorderNodes(){};
 
 reorderNodes::~reorderNodes(){};
 
-void reorderNodes::removeTrip(int tripIndex, Route *route, ProblemInstance *problemInstance){
+void reorderNodes::removeTrip(int tripIndex, Route *route, Solution *solution) {
+    Trip *nextTrip = route->trips[tripIndex + 1];
+
     this->bestIndex = tripIndex;
     this->node = route->trips[tripIndex]->finalNode;
-    this->bestDistance = route->trips[tripIndex]->distance + route->trips[tripIndex+1]->distance;
-    route->distance -= route->trips[tripIndex]->distance + route->trips[tripIndex+1]->distance;
-    route->trips[tripIndex+1]->initialNode = route->trips[tripIndex]->initialNode;
-    route->trips[tripIndex+1]->distance = problemInstance->calculateDistance(route->trips[tripIndex+1]->initialNode, route->trips[tripIndex+1]->finalNode);
-    route->distance += route->trips[tripIndex+1]->distance;
-    this->bestDistance -= route->trips[tripIndex+1]->distance;
+    this->bestDistance = route->trips[tripIndex]->distance + nextTrip->distance;
+
+    route->distance -= route->trips[tripIndex]->distance + nextTrip->distance;
+
+    nextTrip->initialNode = route->trips[tripIndex]->initialNode;
+    nextTrip->distance = solution->problemInstance->calculateDistance(nextTrip->initialNode, nextTrip->finalNode);
+    nextTrip->benefit = solution->literCost[nextTrip->finalNode->getTypeIndex()] * nextTrip->finalNode->getProduction() -
+                       solution->kilometerCost * nextTrip->distance;
+
+    route->distance +=nextTrip->distance;
+
+    this->bestDistance -= nextTrip->distance;
     route->trips.erase(route->trips.begin() + tripIndex); // borrar trip
 };
 
@@ -28,13 +36,20 @@ void reorderNodes::setBest(Route *route, ProblemInstance *problemInstance) {
     }
 }
 
-void reorderNodes::insertTrip(Route *route, Solution *solution, ProblemInstance *problemInstance) {
-    route->distance -= route->trips[this->bestIndex]->distance;
-    Trip *trip = solution->newTrip(route->trips[this->bestIndex]->initialNode, this->node);
-    route->trips[this->bestIndex]->initialNode = this->node;
-    route->trips[this->bestIndex]->distance = problemInstance->calculateDistance(
-            route->trips[this->bestIndex]->initialNode, route->trips[this->bestIndex]->finalNode);
-    route->distance += route->trips[this->bestIndex]->distance + trip->distance;
+void reorderNodes::insertTrip(Route *route, Solution *solution) {
+    Trip *bestTrip = route->trips[this->bestIndex];
+
+    route->distance -= bestTrip->distance;
+    Trip *trip = solution->newTrip(bestTrip->initialNode, this->node);
+
+
+    bestTrip->initialNode = this->node;
+    bestTrip->distance = solution->problemInstance->calculateDistance(bestTrip->initialNode, bestTrip->finalNode);
+    bestTrip->benefit = solution->literCost[bestTrip->finalNode->getTypeIndex()] * bestTrip->finalNode->getProduction() -
+                        solution->kilometerCost * bestTrip->distance;
+
+    route->distance += bestTrip->distance + trip->distance;
+
     route->trips.insert(route->trips.begin() + this->bestIndex, trip);
 }
 
