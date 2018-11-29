@@ -16,5 +16,15 @@ void Route::setId(int id) { this->id = id; }
 
 void Route::setFull() { this->full = true; }
 
+void Route::printAll() {
+    double aux(0);
+    for(Trip *trip: this->trips){
+        aux += trip->benefit;
+    }
+    cout << "Route: " << this->getId() << " truck: " << this->truck->getId() << " milk type: " << this->type << " isFull: "
+         << this->full << " total benefit: " << aux << endl;
+    cout << "Num. of trips: " << this->trips.size() << " remaining Capacity: " << this->remainingCapacity << " distance: " << this->distance << endl;
+}
+
 bool Route::FirstTrip(){ return  this->trips.empty(); }
 

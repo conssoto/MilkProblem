@@ -5,7 +5,7 @@ Solution::Solution(ProblemInstance *problemInstance){
     setRecollected(problemInstance->getNumberOfQualities());
 
     this->literCost = {0.03, 0.021, 0.009};
-    this->kilometerCost = 220;
+    this->kilometerCost = 1;
 
     this->plant = new Node(0, 0, 0);
     this->unsatisfiedDemand = problemInstance->qualities;
@@ -98,7 +98,7 @@ void Solution::addTrip(Trip *trip, Route *route){route->trips.push_back(trip);}
 
 Trip *Solution::newTrip(Node *node1, Node *node2){
     int distance(problemInstance->calculateDistance(node1, node2));
-    return new Trip(node1, node2, distance); // TODO arreglar el id trip
+    return new Trip(node1, node2, distance, this->literCost[node2->getTypeIndex()], this->kilometerCost); // TODO arreglar el id trip
 }
 
 //crea una nueva ruta a partir del siguiente camion mas grande y lo saca de la lista unused trucks
@@ -275,11 +275,9 @@ void Solution::printAll() {
 void Solution::printRoute() {
     for (Route *r: this->routes) {
         cout << endl;
-        cout << "Route: " << r->getId() << " truck: " << r->truck->getId() << " milk type: " << r->type << " isFull: " << r->full << endl;
-        cout << "Num. of trips: " << r->trips.size() << " remaining Capacity: " << r->remainingCapacity << endl;
+        r->printAll();
         for (Trip *trip: r->trips) {
-            cout << "trip: " << trip->routeId << " from: " << trip->initialNode->getId() << " to: " << trip->finalNode->getId() << " type: "
-                 << trip->finalNode->getType() << " prod: " << trip->finalNode->getProduction() << endl;
+            trip->printAll();
         }
     }
 }

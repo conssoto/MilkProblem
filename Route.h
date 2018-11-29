@@ -30,4 +30,6 @@ public:
     void setId(int id);
     void setFull();
     bool FirstTrip();
+
+    void printAll();
 };

@@ -19,8 +19,8 @@ public:
 public:
     reorderNodes();
     ~reorderNodes();
-    void removeTrip(int tripIndex, Route *route, ProblemInstance *problemInstance);
+    void removeTrip(int tripIndex, Route *route, Solution *solution);
     void setBest(Route *route, ProblemInstance *problemInstance);
-    void insertTrip(Route *route, Solution *solution, ProblemInstance *problemInstance);
+    void insertTrip(Route *route, Solution *solution);
     void printRoute(Route *route);
     };
