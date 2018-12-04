@@ -82,16 +82,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/AddNodes.cpp">
+			<Option target="newMCPB"/>
+		</Unit>
+		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/AddNodes.h">
+			<Option target="newMCPB"/>
+		</Unit>
 		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/Construction.cpp">
 			<Option target="newMCPB"/>
 		</Unit>
 		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/Construction.h">
-			<Option target="newMCPB"/>
-		</Unit>
-		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/DeleteNode.cpp">
-			<Option target="newMCPB"/>
-		</Unit>
-		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/DeleteNode.h">
 			<Option target="newMCPB"/>
 		</Unit>
 		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/Node.cpp">
@@ -112,6 +112,12 @@
 		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/Reader.h">
 			<Option target="newMCPB"/>
 		</Unit>
+		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/ReorderNodes.cpp">
+			<Option target="newMCPB"/>
+		</Unit>
+		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/ReorderNodes.h">
+			<Option target="newMCPB"/>
+		</Unit>
 		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/Route.cpp">
 			<Option target="newMCPB"/>
 		</Unit>
@@ -122,12 +128,6 @@
 			<Option target="newMCPB"/>
 		</Unit>
 		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/Solution.h">
-			<Option target="newMCPB"/>
-		</Unit>
-		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/SwapNode.cpp">
-			<Option target="newMCPB"/>
-		</Unit>
-		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/SwapNode.h">
 			<Option target="newMCPB"/>
 		</Unit>
 		<Unit filename="/Users/constanzasoto/TT1-TT2/newMCPB/Trip.cpp">

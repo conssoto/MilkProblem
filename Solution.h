@@ -51,6 +51,8 @@ public:
     void addTrip(Trip *trip, Route *route);
 
     Trip *newTrip(Node *node1, Node *node2);
+    Trip *fakeTrip(Node *node1, Node *node2, Node *node3);
+
 
     vector<Route *> getUnfilledRoutes();
     int getUnsatisfiedType();
@@ -62,4 +64,6 @@ public:
 
     void printAll();
     void printRoute();
+
+    double calculateBenefit(Trip *trip);
 };

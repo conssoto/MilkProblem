@@ -5,6 +5,7 @@
 #include "Solution.h"
 #include "Construction.h"
 #include "ReorderNodes.h"
+#include "AddNodes.h"
 
 using namespace std;
 
@@ -37,20 +38,25 @@ int main() {
 //    delete deletenode;
 
 
-    auto *swapNode = new reorderNodes();
-    for(Route *route: solution->routes){
-//        cout << "inicio" << endl;
-//        swapNode->printRoute(route);
-        for(int i = 0; i < route->trips.size()-1; ++i){
-            swapNode->removeTrip(i, route, solution);
-            swapNode->setBest(route, problemInstance);
-            swapNode->insertTrip(route, solution);
-        }
-//        cout << "final" << endl;
-//        swapNode->printRoute(route);
-    }
-    solution->printAll();
+//    auto *swapNode = new reorderNodes();
+//    for(Route *route: solution->routes){
+////        cout << "inicio" << endl;
+////        swapNode->printRoute(route);
+//        for(int i = 0; i < route->trips.size()-1; ++i){
+//            swapNode->removeTrip(i, route, solution);
+//            swapNode->setBest(route, problemInstance);
+//            swapNode->insertTrip(route, solution);
+//        }
+////        cout << "final" << endl;
+////        swapNode->printRoute(route);
+//    }
+//    solution->printAll();
 
+    auto *addNode = new AddNodes();
+    for(Route *route: solution->routes){
+        addNode->setNeighborhood(solution, route);
+    }
+//    solution->printAll();
 
 
     cout << "Distance cost: " << solution->kilometerCost *  solution->distance << endl;

@@ -96,9 +96,24 @@ void Solution::addTrip(Trip *trip){this->routes.back()->trips.push_back(trip);}
 
 void Solution::addTrip(Trip *trip, Route *route){route->trips.push_back(trip);}
 
+double Solution::calculateBenefit(Trip *trip) {
+    return this->literCost[trip->finalNode->getTypeIndex()] * trip->finalNode->getProduction() -
+           this->kilometerCost * trip->distance;
+}
+
 Trip *Solution::newTrip(Node *node1, Node *node2){
     int distance(problemInstance->calculateDistance(node1, node2));
-    return new Trip(node1, node2, distance, this->literCost[node2->getTypeIndex()], this->kilometerCost); // TODO arreglar el id trip
+    auto trip = new Trip(node1, node2, distance); // TODO arreglar el id trip
+    trip->setBenefit(calculateBenefit(trip));
+    return trip;
+}
+
+Trip *Solution::fakeTrip(Node *node1, Node *node2, Node *node3){
+    int d1(problemInstance->calculateDistance(node1, node2));
+    int d2(problemInstance->calculateDistance(node2, node3));
+    auto trip = new Trip(node1, node2, d1+d2); // TODO arreglar el id trip
+    trip->setBenefit(calculateBenefit(trip));
+    return trip;
 }
 
 //crea una nueva ruta a partir del siguiente camion mas grande y lo saca de la lista unused trucks

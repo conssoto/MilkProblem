@@ -123,6 +123,33 @@ newMCPB/fast:
 	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/build
 .PHONY : newMCPB/fast
 
+AddNodes.o: AddNodes.cpp.o
+
+.PHONY : AddNodes.o
+
+# target to build an object file
+AddNodes.cpp.o:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/AddNodes.cpp.o
+.PHONY : AddNodes.cpp.o
+
+AddNodes.i: AddNodes.cpp.i
+
+.PHONY : AddNodes.i
+
+# target to preprocess a source file
+AddNodes.cpp.i:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/AddNodes.cpp.i
+.PHONY : AddNodes.cpp.i
+
+AddNodes.s: AddNodes.cpp.s
+
+.PHONY : AddNodes.s
+
+# target to generate assembly for a file
+AddNodes.cpp.s:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/AddNodes.cpp.s
+.PHONY : AddNodes.cpp.s
+
 Construction.o: Construction.cpp.o
 
 .PHONY : Construction.o
@@ -149,33 +176,6 @@ Construction.s: Construction.cpp.s
 Construction.cpp.s:
 	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Construction.cpp.s
 .PHONY : Construction.cpp.s
-
-DeleteNode.o: DeleteNode.cpp.o
-
-.PHONY : DeleteNode.o
-
-# target to build an object file
-DeleteNode.cpp.o:
-	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/DeleteNode.cpp.o
-.PHONY : DeleteNode.cpp.o
-
-DeleteNode.i: DeleteNode.cpp.i
-
-.PHONY : DeleteNode.i
-
-# target to preprocess a source file
-DeleteNode.cpp.i:
-	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/DeleteNode.cpp.i
-.PHONY : DeleteNode.cpp.i
-
-DeleteNode.s: DeleteNode.cpp.s
-
-.PHONY : DeleteNode.s
-
-# target to generate assembly for a file
-DeleteNode.cpp.s:
-	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/DeleteNode.cpp.s
-.PHONY : DeleteNode.cpp.s
 
 Node.o: Node.cpp.o
 
@@ -258,6 +258,33 @@ Reader.cpp.s:
 	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Reader.cpp.s
 .PHONY : Reader.cpp.s
 
+ReorderNodes.o: ReorderNodes.cpp.o
+
+.PHONY : ReorderNodes.o
+
+# target to build an object file
+ReorderNodes.cpp.o:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/ReorderNodes.cpp.o
+.PHONY : ReorderNodes.cpp.o
+
+ReorderNodes.i: ReorderNodes.cpp.i
+
+.PHONY : ReorderNodes.i
+
+# target to preprocess a source file
+ReorderNodes.cpp.i:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/ReorderNodes.cpp.i
+.PHONY : ReorderNodes.cpp.i
+
+ReorderNodes.s: ReorderNodes.cpp.s
+
+.PHONY : ReorderNodes.s
+
+# target to generate assembly for a file
+ReorderNodes.cpp.s:
+	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/ReorderNodes.cpp.s
+.PHONY : ReorderNodes.cpp.s
+
 Route.o: Route.cpp.o
 
 .PHONY : Route.o
@@ -311,33 +338,6 @@ Solution.s: Solution.cpp.s
 Solution.cpp.s:
 	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/Solution.cpp.s
 .PHONY : Solution.cpp.s
-
-SwapNode.o: SwapNode.cpp.o
-
-.PHONY : SwapNode.o
-
-# target to build an object file
-SwapNode.cpp.o:
-	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/SwapNode.cpp.o
-.PHONY : SwapNode.cpp.o
-
-SwapNode.i: SwapNode.cpp.i
-
-.PHONY : SwapNode.i
-
-# target to preprocess a source file
-SwapNode.cpp.i:
-	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/SwapNode.cpp.i
-.PHONY : SwapNode.cpp.i
-
-SwapNode.s: SwapNode.cpp.s
-
-.PHONY : SwapNode.s
-
-# target to generate assembly for a file
-SwapNode.cpp.s:
-	$(MAKE) -f CMakeFiles/newMCPB.dir/build.make CMakeFiles/newMCPB.dir/SwapNode.cpp.s
-.PHONY : SwapNode.cpp.s
 
 Trip.o: Trip.cpp.o
 
@@ -429,12 +429,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... newMCPB"
+	@echo "... AddNodes.o"
+	@echo "... AddNodes.i"
+	@echo "... AddNodes.s"
 	@echo "... Construction.o"
 	@echo "... Construction.i"
 	@echo "... Construction.s"
-	@echo "... DeleteNode.o"
-	@echo "... DeleteNode.i"
-	@echo "... DeleteNode.s"
 	@echo "... Node.o"
 	@echo "... Node.i"
 	@echo "... Node.s"
@@ -444,15 +444,15 @@ help:
 	@echo "... Reader.o"
 	@echo "... Reader.i"
 	@echo "... Reader.s"
+	@echo "... ReorderNodes.o"
+	@echo "... ReorderNodes.i"
+	@echo "... ReorderNodes.s"
 	@echo "... Route.o"
 	@echo "... Route.i"
 	@echo "... Route.s"
 	@echo "... Solution.o"
 	@echo "... Solution.i"
 	@echo "... Solution.s"
-	@echo "... SwapNode.o"
-	@echo "... SwapNode.i"
-	@echo "... SwapNode.s"
 	@echo "... Trip.o"
 	@echo "... Trip.i"
 	@echo "... Trip.s"

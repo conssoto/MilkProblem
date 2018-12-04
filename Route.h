@@ -31,5 +31,7 @@ public:
     void setFull();
     bool FirstTrip();
 
+    void removeTrip(int tripIndex, Route *route);
+
     void printAll();
 };

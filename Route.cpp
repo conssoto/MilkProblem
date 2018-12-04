@@ -16,6 +16,23 @@ void Route::setId(int id) { this->id = id; }
 
 void Route::setFull() { this->full = true; }
 
+void Route::removeTrip(int tripIndex, Route *route) {
+    Trip *nextTrip = route->trips[tripIndex + 1];
+
+    route->distance -= route->trips[tripIndex]->distance + nextTrip->distance;
+
+    nextTrip->initialNode = route->trips[tripIndex]->initialNode;
+//    nextTrip->distance = solution->problemInstance->calculateDistance(nextTrip->initialNode, nextTrip->finalNode);
+//    nextTrip->benefit = solution->literCost[nextTrip->finalNode->getTypeIndex()] * nextTrip->finalNode->getProduction() -
+//                        solution->kilometerCost * nextTrip->distance;
+
+    route->distance +=nextTrip->distance;
+
+    route->trips.erase(route->trips.begin() + tripIndex); // borrar trip
+};
+
+
+
 void Route::printAll() {
     double aux(0);
     for(Trip *trip: this->trips){
@@ -27,4 +44,3 @@ void Route::printAll() {
 }
 
 bool Route::FirstTrip(){ return  this->trips.empty(); }
-
