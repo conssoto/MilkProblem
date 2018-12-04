@@ -17,8 +17,7 @@ AddNodes::~AddNodes(){
 //    nextTrip->distance = solution->problemInstance->calculateDistance(nextTrip->initialNode, nextTrip->finalNode);
 //    nextTrip->setBenefit(solution->calculateBenefit(nextTrip));
 //    route->distance +=nextTrip->distance;
-//
-//
+//    route->remainingCapacity =-route->trips[tripIndex]->finalNode->production;
 //
 //    route->trips.erase(route->trips.begin() + tripIndex); // borrar trip
 //};

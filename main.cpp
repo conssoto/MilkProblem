@@ -58,17 +58,6 @@ int main() {
     }
 //    solution->printAll();
 
-
-    cout << "Distance cost: " << solution->kilometerCost *  solution->distance << endl;
-
-    cout << "Milk cost: " << endl;
-    double suma(0);
-    for(int i = 0; i < solution->recollected.size(); ++i){
-        suma +=solution->recollected[i] * solution->literCost[i];
-        cout << solution->recollected[i] * solution->literCost[i] << endl;
-    }
-    cout << "Total Milk cost: " << suma << endl;
-
     delete solution;
 
 

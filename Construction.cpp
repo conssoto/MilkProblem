@@ -24,7 +24,7 @@ vector<Trip *> Construction::getOptions(Solution *solution, int currentType, Nod
     vector<Trip *> options;
     for (int i = 0; i < solution->nodesXQuality[currentType - 1]; ++i) {
         Node *option = solution->unvisitedNodes[i];
-        if (fitsInTruck(solution->routes.back(), option)) { // TODO eliminar trips
+        if (fitsInTruck(solution->routes.back(), option)) {
             options.push_back(solution->newTrip(currentNode, option));
         }
     }

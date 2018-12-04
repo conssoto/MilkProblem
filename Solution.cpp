@@ -33,7 +33,7 @@ Solution::~Solution() {
     }
 
     for ( auto it = this->routes.begin(); it != this->routes.end(); ){
-        this->routes.erase(it);     // TODO eliminar el trip si se hace con new
+        this->routes.erase(it);
     }
 
     delete problemInstance;
@@ -76,7 +76,6 @@ void Solution::setUnvisitedNodes(vector<Node *> nodes){
     }
 }
 
-
 vector<Route *> Solution::getUnfilledRoutes(){
     vector<Route *> unfilledRoutes;
     for(Route *route: this->routes){
@@ -87,31 +86,35 @@ vector<Route *> Solution::getUnfilledRoutes(){
     return unfilledRoutes;
 }
 
-
 void Solution::addNode(Node *node){this->unvisitedNodes.push_back(node);}
 
 void Solution::addTruck(Truck *truck){this->unusedTrucks.push_back(truck);}
 
-void Solution::addTrip(Trip *trip){this->routes.back()->trips.push_back(trip);}
-
-void Solution::addTrip(Trip *trip, Route *route){route->trips.push_back(trip);}
+void Solution::addTrip(Trip *trip, Route *route = nullptr) {
+    if (route) {
+        route->trips.push_back(trip);
+    }
+    else {
+        this->routes.back()->trips.push_back(trip);
+    }
+}
 
 double Solution::calculateBenefit(Trip *trip) {
     return this->literCost[trip->finalNode->getTypeIndex()] * trip->finalNode->getProduction() -
            this->kilometerCost * trip->distance;
 }
 
-Trip *Solution::newTrip(Node *node1, Node *node2){
+Trip *Solution::newTrip(Node *node1, Node *node2) {
     int distance(problemInstance->calculateDistance(node1, node2));
     auto trip = new Trip(node1, node2, distance); // TODO arreglar el id trip
     trip->setBenefit(calculateBenefit(trip));
     return trip;
 }
 
-Trip *Solution::fakeTrip(Node *node1, Node *node2, Node *node3){
+Trip *Solution::fakeTrip(Node *node1, Node *node2, Node *node3) {
     int d1(problemInstance->calculateDistance(node1, node2));
     int d2(problemInstance->calculateDistance(node2, node3));
-    auto trip = new Trip(node1, node2, d1+d2); // TODO arreglar el id trip
+    auto trip = new Trip(node1, node2, d1 + d2); // TODO arreglar el id trip
     trip->setBenefit(calculateBenefit(trip));
     return trip;
 }
@@ -119,8 +122,8 @@ Trip *Solution::fakeTrip(Node *node1, Node *node2, Node *node3){
 //crea una nueva ruta a partir del siguiente camion mas grande y lo saca de la lista unused trucks
 // TODO podria ser a partir del camion con capacidad mas cercana a la demanda de calidad actual
 void Solution::addRoute(int type) {
-    if(!this->unusedTrucks.empty()){
-        int routeId(this->routes.size()+1);
+    if (!this->unusedTrucks.empty()) {
+        int routeId(this->routes.size() + 1);
         Truck *truck = this->getNextTruck();
         auto route = new Route(routeId, truck, type);
         this->routes.push_back(route);
@@ -135,8 +138,8 @@ int Solution::getUnsatisfiedType() {
     return -1; //si el ultimo tipo ya se suplio, devuelve -1
 }
 
-Node *Solution::getCurrentNode(){
-    if(this->routes.back()->trips.empty()){
+Node *Solution::getCurrentNode() {
+    if (this->routes.back()->trips.empty()) {
         return this->plant;
     }
     return routes.back()->trips.back()->finalNode;
@@ -159,7 +162,7 @@ void Solution::removeNode(Node *node) {
     this->unvisitedNodes.erase(this->unvisitedNodes.begin() + index);
     for (int i = node->getTypeIndex(); i < this->nodesXQuality.size(); ++i) {
         if (nodesXQuality[i] != 0) {
-            this->nodesXQuality[i] -= 1;
+            this->nodesXQuality[i] -= 1; // saca la distancia?
         }
     }
 }
@@ -168,64 +171,53 @@ void Solution::decreaseDemand(int position, int production) {
     this->unsatisfiedDemand[position] -= production;
 }
 
-void Solution::updateDemands(int position, Trip *trip, int production) { // TODO cuando se satisface la leche sigue con la siguiente en otra ruta
-    decreaseDemand(position, production);
-    if(this->unsatisfiedDemand[position] < 0){
-        Trip *toPlant = newTrip(trip->finalNode, this->plant);
-        addTrip(toPlant);
-        this->distance += toPlant->distance;
-        if(position+1 < this->unsatisfiedDemand.size()) {
-            decreaseDemand(position+1, -this->unsatisfiedDemand[position]); // si se pasa del size
-            addRoute(position+2);
-
-        }
-    }
-}
-
-void Solution::updateDemands(int position, Trip *trip, int production, Route *route) { // TODO cuando se satisface la leche sigue con la siguiente en otra ruta
-    for(int i = position; i < this->unsatisfiedDemand.size(); ++i){
-        if( this->unsatisfiedDemand[i] > 0){
-            decreaseDemand(i, production);
-            if ( this->unsatisfiedDemand[i] < 0){
-                Trip *toPlant = newTrip(trip->finalNode, this->plant);
-                addTrip(toPlant, route);
-                this->distance += toPlant->distance;
+void Solution::updateDemands(int position, Trip *trip, int production, Route *route= nullptr) { // TODO cuando se satisface la leche sigue con la siguiente en otra ruta
+    if (route) {
+        for (int i = position; i < this->unsatisfiedDemand.size(); ++i) {
+            if (this->unsatisfiedDemand[i] > 0) {
+                decreaseDemand(i, production);
+                if (this->unsatisfiedDemand[i] < 0) {
+                    Trip *toPlant = newTrip(trip->finalNode, this->plant);
+                    addTrip(toPlant, route);
+                    this->distance += toPlant->distance;
+                }
+                break;
             }
-            break;
+            decreaseDemand(i, production);
         }
-        decreaseDemand(i, production);
+    } else {
+        decreaseDemand(position, production);
+        if (this->unsatisfiedDemand[position] < 0) {
+            Trip *toPlant = newTrip(trip->finalNode, this->plant);
+            addTrip(toPlant);
+            this->distance += toPlant->distance;
+            if (position + 1 < this->unsatisfiedDemand.size()) {
+                decreaseDemand(position + 1, -this->unsatisfiedDemand[position]); // si se pasa del size
+                addRoute(position + 2);
+            }
+        }
     }
+
 }
 
-
-
-void Solution::updateSolution(Trip *trip) {
+void Solution::updateSolution(Trip *trip, Route *route = nullptr) {
+    Route *currentRoute;
+    if(route){
+        currentRoute = route;
+    }
+    else{
+        currentRoute = this->routes.back();
+    }
     this->distance += trip->distance;
-    this->routes.back()->distance += trip->distance;
+    currentRoute->distance += trip->distance;
     if (trip->finalNode != this->plant) {
         int tripProduction(trip->finalNode->getProduction());
         this->recollected[trip->finalNode->getTypeIndex()] += tripProduction;
-        this->routes.back()->remainingCapacity -= tripProduction;
-        if(this->routes.back()->remainingCapacity == 0){
-            this->routes.back()->setFull();
+        currentRoute->remainingCapacity -= tripProduction;
+        if (currentRoute->remainingCapacity == 0) {
+            currentRoute->setFull();
         }
-        updateDemands(this->routes.back()->getTypeIndex(), trip, tripProduction);
-        removeNode(trip->finalNode);
-    }
-}
-
-
-void Solution::updateSolution(Trip *trip, Route *route) {
-    this->distance += trip->distance;
-    route->distance += trip->distance;
-    if (trip->finalNode != this->plant) {
-        int tripProduction(trip->finalNode->getProduction());
-        this->recollected[trip->finalNode->getTypeIndex()] += tripProduction;
-        route->remainingCapacity -= tripProduction;
-        if(route->remainingCapacity == 0){
-            route->setFull();
-        }
-        updateDemands(route->getTypeIndex(), trip, tripProduction, route);
+        updateDemands(currentRoute->getTypeIndex(), trip, tripProduction, route);
         removeNode(trip->finalNode);
     }
 }
@@ -236,8 +228,6 @@ void Solution::updateDistance(int distance){
         this->distance += route->distance;
     }
 }
-
-
 
 void Solution::printAll() {
     cout << "distance: " << this->distance << endl;
@@ -274,15 +264,15 @@ void Solution::printAll() {
     for (int q: this->nodesXQuality) {
         cout << q << endl;
     }
-//    cout << "Distance cost: " << this->kilometerCost *  this->distance << endl;
-//
-//    cout << "Milk cost: " << endl;
-//    double suma(0);
-//    for(int i = 0; i < this->recollected.size(); ++i){
-//        suma +=this->recollected[i] * this->literCost[i];
-//        cout << this->recollected[i] * this->literCost[i] << endl;
-//    }
-//    cout << "Total Milk cost: " << suma << endl;
+    cout << "Distance cost: " << this->kilometerCost *  this->distance << endl;
+
+    cout << "Milk cost: " << endl;
+    double suma(0);
+    for(int i = 0; i < this->recollected.size(); ++i){
+        suma +=this->recollected[i] * this->literCost[i];
+        cout << this->recollected[i] * this->literCost[i] << endl;
+    }
+    cout << "Total Milk cost: " << suma << endl;
 
     printRoute();
 }

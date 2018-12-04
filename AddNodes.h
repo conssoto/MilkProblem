@@ -12,6 +12,7 @@
 class AddNodes {
 public:
     vector<Trip *> neighborhood;
+    Node *removedNode;
 
 public:
     explicit AddNodes();
