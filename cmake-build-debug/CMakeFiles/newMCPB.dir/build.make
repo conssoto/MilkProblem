@@ -174,31 +174,31 @@ CMakeFiles/newMCPB.dir/Construction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/newMCPB.dir/Construction.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/constanzasoto/TT1-TT2/newMCPB/Construction.cpp -o CMakeFiles/newMCPB.dir/Construction.cpp.s
 
-CMakeFiles/newMCPB.dir/DeleteNode.cpp.o: CMakeFiles/newMCPB.dir/flags.make
-CMakeFiles/newMCPB.dir/DeleteNode.cpp.o: ../DeleteNode.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/constanzasoto/TT1-TT2/newMCPB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/newMCPB.dir/DeleteNode.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/newMCPB.dir/DeleteNode.cpp.o -c /Users/constanzasoto/TT1-TT2/newMCPB/DeleteNode.cpp
+CMakeFiles/newMCPB.dir/ReorderNodes.cpp.o: CMakeFiles/newMCPB.dir/flags.make
+CMakeFiles/newMCPB.dir/ReorderNodes.cpp.o: ../ReorderNodes.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/constanzasoto/TT1-TT2/newMCPB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/newMCPB.dir/ReorderNodes.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/newMCPB.dir/ReorderNodes.cpp.o -c /Users/constanzasoto/TT1-TT2/newMCPB/ReorderNodes.cpp
 
-CMakeFiles/newMCPB.dir/DeleteNode.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/newMCPB.dir/DeleteNode.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/constanzasoto/TT1-TT2/newMCPB/DeleteNode.cpp > CMakeFiles/newMCPB.dir/DeleteNode.cpp.i
+CMakeFiles/newMCPB.dir/ReorderNodes.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/newMCPB.dir/ReorderNodes.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/constanzasoto/TT1-TT2/newMCPB/ReorderNodes.cpp > CMakeFiles/newMCPB.dir/ReorderNodes.cpp.i
 
-CMakeFiles/newMCPB.dir/DeleteNode.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/newMCPB.dir/DeleteNode.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/constanzasoto/TT1-TT2/newMCPB/DeleteNode.cpp -o CMakeFiles/newMCPB.dir/DeleteNode.cpp.s
+CMakeFiles/newMCPB.dir/ReorderNodes.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/newMCPB.dir/ReorderNodes.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/constanzasoto/TT1-TT2/newMCPB/ReorderNodes.cpp -o CMakeFiles/newMCPB.dir/ReorderNodes.cpp.s
 
-CMakeFiles/newMCPB.dir/SwapNode.cpp.o: CMakeFiles/newMCPB.dir/flags.make
-CMakeFiles/newMCPB.dir/SwapNode.cpp.o: ../SwapNode.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/constanzasoto/TT1-TT2/newMCPB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/newMCPB.dir/SwapNode.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/newMCPB.dir/SwapNode.cpp.o -c /Users/constanzasoto/TT1-TT2/newMCPB/SwapNode.cpp
+CMakeFiles/newMCPB.dir/AddNodes.cpp.o: CMakeFiles/newMCPB.dir/flags.make
+CMakeFiles/newMCPB.dir/AddNodes.cpp.o: ../AddNodes.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/constanzasoto/TT1-TT2/newMCPB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/newMCPB.dir/AddNodes.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/newMCPB.dir/AddNodes.cpp.o -c /Users/constanzasoto/TT1-TT2/newMCPB/AddNodes.cpp
 
-CMakeFiles/newMCPB.dir/SwapNode.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/newMCPB.dir/SwapNode.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/constanzasoto/TT1-TT2/newMCPB/SwapNode.cpp > CMakeFiles/newMCPB.dir/SwapNode.cpp.i
+CMakeFiles/newMCPB.dir/AddNodes.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/newMCPB.dir/AddNodes.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/constanzasoto/TT1-TT2/newMCPB/AddNodes.cpp > CMakeFiles/newMCPB.dir/AddNodes.cpp.i
 
-CMakeFiles/newMCPB.dir/SwapNode.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/newMCPB.dir/SwapNode.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/constanzasoto/TT1-TT2/newMCPB/SwapNode.cpp -o CMakeFiles/newMCPB.dir/SwapNode.cpp.s
+CMakeFiles/newMCPB.dir/AddNodes.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/newMCPB.dir/AddNodes.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/constanzasoto/TT1-TT2/newMCPB/AddNodes.cpp -o CMakeFiles/newMCPB.dir/AddNodes.cpp.s
 
 # Object files for target newMCPB
 newMCPB_OBJECTS = \
@@ -211,8 +211,8 @@ newMCPB_OBJECTS = \
 "CMakeFiles/newMCPB.dir/Reader.cpp.o" \
 "CMakeFiles/newMCPB.dir/Solution.cpp.o" \
 "CMakeFiles/newMCPB.dir/Construction.cpp.o" \
-"CMakeFiles/newMCPB.dir/DeleteNode.cpp.o" \
-"CMakeFiles/newMCPB.dir/SwapNode.cpp.o"
+"CMakeFiles/newMCPB.dir/ReorderNodes.cpp.o" \
+"CMakeFiles/newMCPB.dir/AddNodes.cpp.o"
 
 # External object files for target newMCPB
 newMCPB_EXTERNAL_OBJECTS =
@@ -226,8 +226,8 @@ newMCPB: CMakeFiles/newMCPB.dir/ProblemInstance.cpp.o
 newMCPB: CMakeFiles/newMCPB.dir/Reader.cpp.o
 newMCPB: CMakeFiles/newMCPB.dir/Solution.cpp.o
 newMCPB: CMakeFiles/newMCPB.dir/Construction.cpp.o
-newMCPB: CMakeFiles/newMCPB.dir/DeleteNode.cpp.o
-newMCPB: CMakeFiles/newMCPB.dir/SwapNode.cpp.o
+newMCPB: CMakeFiles/newMCPB.dir/ReorderNodes.cpp.o
+newMCPB: CMakeFiles/newMCPB.dir/AddNodes.cpp.o
 newMCPB: CMakeFiles/newMCPB.dir/build.make
 newMCPB: CMakeFiles/newMCPB.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/constanzasoto/TT1-TT2/newMCPB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable newMCPB"

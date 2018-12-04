@@ -1,18 +1,14 @@
 #include "Trip.h"
 
-Trip::Trip(Node * initialNode, Node * finalNode, int distance, double literCost, double kilometerCost){
-    this->initialNode = initialNode;
-    this->finalNode = finalNode;
-    this->distance = distance;
-    this->benefit = literCost * finalNode->getProduction() - kilometerCost * distance;
-}
+Trip::Trip(Node * initialNode, Node * finalNode, int distance): initialNode(initialNode), finalNode(finalNode), distance(distance){}
 
 Trip::~Trip() = default;
+
+void Trip::setBenefit(double benefit){ this->benefit = benefit;}
 
 void Trip::setRouteId(int id){ this->routeId = id; }
 
 void Trip::updateInitalNode(Node *node){ this->initialNode = node; }
-
 
 void Trip::printAll() {
     cout << "trip: " << this->routeId << "  from: " << this->initialNode->getId() << "  to: "
@@ -23,3 +19,5 @@ void Trip::printAll() {
 }
 
 bool sortByDistance(const Trip *t1, const Trip *t2){ return t1->distance < t2->distance; }
+
+bool sortByBenefit(const Trip *t1, const Trip *t2){ return t1->benefit < t2->benefit; }

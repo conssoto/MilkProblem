@@ -15,8 +15,7 @@ void reorderNodes::removeTrip(int tripIndex, Route *route, Solution *solution) {
 
     nextTrip->initialNode = route->trips[tripIndex]->initialNode;
     nextTrip->distance = solution->problemInstance->calculateDistance(nextTrip->initialNode, nextTrip->finalNode);
-    nextTrip->benefit = solution->literCost[nextTrip->finalNode->getTypeIndex()] * nextTrip->finalNode->getProduction() -
-                       solution->kilometerCost * nextTrip->distance;
+    nextTrip->setBenefit(solution->calculateBenefit(nextTrip));
 
     route->distance +=nextTrip->distance;
 
@@ -45,8 +44,7 @@ void reorderNodes::insertTrip(Route *route, Solution *solution) {
 
     bestTrip->initialNode = this->node;
     bestTrip->distance = solution->problemInstance->calculateDistance(bestTrip->initialNode, bestTrip->finalNode);
-    bestTrip->benefit = solution->literCost[bestTrip->finalNode->getTypeIndex()] * bestTrip->finalNode->getProduction() -
-                        solution->kilometerCost * bestTrip->distance;
+    bestTrip->setBenefit(solution->calculateBenefit(bestTrip));
 
     route->distance += bestTrip->distance + trip->distance;
 

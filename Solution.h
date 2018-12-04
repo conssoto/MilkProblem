@@ -33,9 +33,7 @@ public:
     ~Solution();
 
     void updateSolution(Trip *trip, Route *route);
-    void updateSolution(Trip *trip);
     void decreaseDemand(int position, int production);
-    void updateDemands(int position, Trip *trip, int production);
     void updateDemands(int position, Trip *trip, int production, Route *route);
     void updateDistance(int distance);
 
@@ -47,10 +45,11 @@ public:
     void addTruck(Truck *truck);
     void addNode(Node *node);
     void addRoute(int type);
-    void addTrip(Trip *trip);
     void addTrip(Trip *trip, Route *route);
 
     Trip *newTrip(Node *node1, Node *node2);
+    Trip *fakeTrip(Node *node1, Node *node2, Node *node3, int routeId);
+
 
     vector<Route *> getUnfilledRoutes();
     int getUnsatisfiedType();
@@ -62,4 +61,6 @@ public:
 
     void printAll();
     void printRoute();
+
+    double calculateBenefit(Trip *trip);
 };
