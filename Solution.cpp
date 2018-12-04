@@ -99,6 +99,8 @@ void Solution::addTrip(Trip *trip, Route *route = nullptr) {
     }
 }
 
+
+
 double Solution::calculateBenefit(Trip *trip) {
     return this->literCost[trip->finalNode->getTypeIndex()] * trip->finalNode->getProduction() -
            this->kilometerCost * trip->distance;
@@ -111,11 +113,12 @@ Trip *Solution::newTrip(Node *node1, Node *node2) {
     return trip;
 }
 
-Trip *Solution::fakeTrip(Node *node1, Node *node2, Node *node3) {
+Trip *Solution::fakeTrip(Node *node1, Node *node2, Node *node3, int routeId) {
     int d1(problemInstance->calculateDistance(node1, node2));
     int d2(problemInstance->calculateDistance(node2, node3));
     auto trip = new Trip(node1, node2, d1 + d2); // TODO arreglar el id trip
     trip->setBenefit(calculateBenefit(trip));
+    trip->setRouteId(routeId);
     return trip;
 }
 

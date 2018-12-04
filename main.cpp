@@ -53,9 +53,9 @@ int main() {
 //    solution->printAll();
 
     auto *addNode = new AddNodes();
-    for(Route *route: solution->routes){
-        addNode->setNeighborhood(solution, route);
-    }
+
+    addNode->movement(solution);
+
 //    solution->printAll();
 
     delete solution;

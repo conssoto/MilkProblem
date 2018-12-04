@@ -13,6 +13,9 @@ class AddNodes {
 public:
     vector<Trip *> neighborhood;
     Node *removedNode;
+    double totalBenefit;
+    int insertPosition;
+
 
 public:
     explicit AddNodes();
@@ -21,6 +24,13 @@ public:
     Trip *getBestNeighbor(Solution *solution, Route *currentRoute, Trip *trip);
     void setNeighborhood(Solution *solution, Route *route);
     bool fitsInTruck(Route *route, Node *node);
-    void deleteOptions(vector<Trip *> options);
+    void deleteOptions(vector<Trip *> options, int aux);
+    void setTotalBenefit();
+    Trip *roulette();
+    void insertTrip(Trip *selectedTrip, Solution *solution);
+    void movement(Solution *solution);
+
+
+
 
     };

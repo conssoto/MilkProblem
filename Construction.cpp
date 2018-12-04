@@ -76,7 +76,7 @@ void Construction::setTotalProduction(){
     }
 }
 
-Trip *Construction::roulette() { // TODO borrar los no selectionados
+Trip *Construction::roulette() {
     setTotalProduction();
     if (this->totalProduction == 0) { //volver a la planta
         return this->neighborhood[0];
@@ -91,7 +91,6 @@ Trip *Construction::roulette() { // TODO borrar los no selectionados
         if ((beta < choiceProbability) || (choiceProbability == 100)) {
             aux++;
             deleteOptions(this->neighborhood, aux);
-
             return trip;
         }
         aux++;
@@ -113,14 +112,15 @@ void Construction::feasibleSolution(Solution *solution) {
     while (solution->getUnsatisfiedType() != -1) {
         setNeighborhood(solution);
         Trip *trip = roulette();
-        solution->addTrip(trip);
-        solution->updateSolution(trip);
+        solution->addTrip(trip, nullptr);
+        solution->updateSolution(trip, nullptr);
 
         if (solution->unusedTrucks.empty() && !solution->routes.back()->trips.empty() &&
             solution->routes.back()->trips.back()->finalNode == solution->plant) {
             break; // iniciar fase 2
         }
     }
+    cout << "FASE 1" << endl;
     solution->printAll();
 
     // fase 2
@@ -133,5 +133,6 @@ void Construction::feasibleSolution(Solution *solution) {
         solution->updateSolution(trip, currentRoute);
     }
     this->updateIds(solution->routes);
+    cout << "FASE 2" << endl;
     solution->printAll();
 }

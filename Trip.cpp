@@ -10,7 +10,6 @@ void Trip::setRouteId(int id){ this->routeId = id; }
 
 void Trip::updateInitalNode(Node *node){ this->initialNode = node; }
 
-
 void Trip::printAll() {
     cout << "trip: " << this->routeId << "  from: " << this->initialNode->getId() << "  to: "
          << this->finalNode->getId() << "  type: "
